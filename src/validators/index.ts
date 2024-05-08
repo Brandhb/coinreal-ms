@@ -1,11 +1,10 @@
 import { z } from "zod";
 
 export const ContactFormSchema = z.object({
-    name: z.string().min(2, {
-      message: "Name must be at least 2 characters.",
-    }),
-    senderEmail: z.string().email(),
-    message: z
+  name: z.string().min(1, {message: "Name is required." }),
+  senderEmail: z.string().min(1, {message: "Email is required." }).email("Invalid email."),
+  message: z
     .string()
-    .min(6, { message: 'Message must be at least 6 characters.' })
+    .min(1, {message: "Message is required." })
+    .min(6, { message: "Message must be at least 6 characters." }),
 });
