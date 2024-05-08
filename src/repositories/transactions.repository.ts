@@ -1,5 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
-import db from '../services/db/db';
+const db = require('@/db/db');
 
 interface TransactionAttributes {
   transaction_id: number;

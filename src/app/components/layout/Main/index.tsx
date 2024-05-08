@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const Main: React.FC = () => {
@@ -18,7 +19,7 @@ const Main: React.FC = () => {
 
             {/* Right Content */}
             <div>
-              <img src="/images/main-image.jpg" alt="Main Image" className="rounded-lg shadow-md" />
+              <Image fill src="/images/main-image.jpg" alt="Main Image" className="rounded-lg shadow-md" />
             </div>
           </div>
         </div>

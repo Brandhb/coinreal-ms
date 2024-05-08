@@ -1,7 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
-import db from '../services/db/db';
+const db = require('@/db/db');
 
-import transactionRepository from '@/app/repositories/transactions.repository';
+import transactionRepository from '@/repositories/transactions.repository';
 
 interface ClientAttributes {
   client_id?: number;
