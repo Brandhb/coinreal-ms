@@ -124,15 +124,15 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Testimonials Section */}
+            {/* Testimonials Section 
             <section className="py-20">
               <div className="container mx-auto">
                 <h2 className="text-3xl font-semibold mb-8 text-center">
                   What Our Customers Say
                 </h2>
-                {/* Include testimonials from satisfied customers */}
+                
               </div>
-            </section>
+            </section>*/}
           </MaxWidthWrapper>
         </section>
         <svg
