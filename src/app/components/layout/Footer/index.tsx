@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
               out to us using the contact information below.
             </p>
             <div className=" mb-4">
-              <p>Email: developer@goldy.team</p>
+              <p>Email: suuport@ways2coin</p>
             </div>
             <button
               onClick={handleContactUsClick}
