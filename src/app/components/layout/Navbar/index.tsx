@@ -8,7 +8,12 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
+import { ConnectButton } from "thirdweb/react";
+import client from "@/lib/client";
+import { NETWORK } from "@/const/contracts";
+import toast from "react-hot-toast";
+import toastStyle from "@/utils/toastConfig";
 
 const Navbar: FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,6 +21,20 @@ const Navbar: FC = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+  useEffect(() => {
+    {/*toast.loading("Approving...", {
+      id: "approve",
+      style: toastStyle,
+      position: "bottom-center",
+    });*/}
+    toast("Approval successful.", {
+      icon: "👍",
+      id: "approve",
+      style: toastStyle,
+      position: "bottom-center",
+    });
+  }, [])
+  
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur bg-opacity-30 py-4">
@@ -26,6 +45,11 @@ const Navbar: FC = () => {
             <a href="/" className="text-xl font-bold text-white">
               Ways2Coin
             </a>
+            {/*<ConnectButton
+              theme="dark"
+              client={client}
+              chain={NETWORK}
+  />*/}
           </div>
 
           {/* Middle Section: Route Links (Hidden on Mobile) */}
@@ -36,7 +60,10 @@ const Navbar: FC = () => {
             <a href="/buy-sell" className="text-white hover:text-gray-300">
               Buy & Sell
             </a>
-            <a href="/personal-wallet" className="text-white hover:text-gray-300">
+            <a
+              href="/personal-wallet"
+              className="text-white hover:text-gray-300"
+            >
               Your Personal Wallet
             </a>
             <a href="/contact" className="text-white hover:text-gray-300">

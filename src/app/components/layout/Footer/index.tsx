@@ -101,12 +101,12 @@ const Footer: React.FC = () => {
               </h2>
               <ul className="text-white font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline hover:text-gray-300">
+                  <a href="/privacy" className="hover:underline hover:text-gray-300">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline hover:text-gray-300">
+                  <a href="/terms" className="hover:underline hover:text-gray-300">
                     Terms &amp; Conditions
                   </a>
                 </li>

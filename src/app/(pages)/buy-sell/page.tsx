@@ -2,18 +2,23 @@
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { redirect, useRouter } from "next/navigation";
-import Head from "next/head";
 
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ways2Coin - Buy & Sell",
+  description: "Crypto exchange buy & sell",
+};
 
 export default function Page() {
-  const router = useRouter();
+  {
+    /* const router = useRouter();
   const { user } = useUser();
 
   const [loading, setLoading] = useState(true);
 
-  {
-    /*useEffect(() => {
+  useEffect(() => {
     // If the user is not authenticated, redirect to sign-up page
     if (!user) {
       redirect('/sign-in'); // Redirect to sign-up page
@@ -29,13 +34,7 @@ export default function Page() {
 
   return (
     <>
-      <Head>
-        <title>Crypto Exchange</title>
-        <meta name="description" content="Crypto exchange page" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div className=" py-8 lg:py-16 mx-auto max-w-3xl space-y-10 ">
+      <div className=" py-8 lg:py-16 mx-auto max-w-6xl space-y-10 ">
         <MaxWidthWrapper>
           <header>
             <div className="py-2">

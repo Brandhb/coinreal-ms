@@ -6,6 +6,7 @@ import {
 const isProtectedRoute = createRouteMatcher([
   '/buy-sell(.*)',
   '/personal-wallet(.*)',
+  '/account-verification(.*)'
 ]);
 
 export default clerkMiddleware((auth, req) => {

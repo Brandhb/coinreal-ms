@@ -1,7 +1,11 @@
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
-import React from "react";
+import React, { useEffect } from "react";
 import { Smile, Fingerprint, DollarSign } from "lucide-react";
 import Perk from "@/app/components/ui/Perk";
+import { Toaster } from "@/app/components/ui/shadcn/sonner"
+import toastStyle from "@/utils/toastConfig";
+import { toast } from "sonner"
+
 const features = [
   {
     Icon: Smile,
@@ -23,7 +27,29 @@ const features = [
   },
 ];
 
-const page = () => {
+const Page = () => {
+
+  
+    {/*toast.loading("Approving...", {
+      id: "approve",
+      style: toastStyle,
+      position: "bottom-center",
+    });
+    toast("Approval successful.", {
+      icon: "👍",
+      id: "approve",
+      style: toastStyle,
+      position: "bottom-center",
+    });
+    toast("Event has been created", {
+      description: "Sunday, December 03, 2023 at 9:00 AM",
+      action: {
+        label: "Close",
+        onClick: () => console.log("close"),
+      },
+    })*/}
+
+  
   return (
     <>
       <MaxWidthWrapper>
@@ -53,7 +79,6 @@ const page = () => {
             <div className="mt-12 grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
               {features.map((feature, index) => (
                 <>
-                
                   <Perk title={feature.title}  Icon={feature.Icon} description={feature.description}/>
                 </>
               ))}
@@ -117,4 +142,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

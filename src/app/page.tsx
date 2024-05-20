@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Perk from "./components/ui/Perk";
+import VeriffComponent from "./components/ui/Veriff";
 
 const perks = [
   {
