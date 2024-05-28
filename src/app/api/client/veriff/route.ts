@@ -1,7 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import { getVeriffLink, checkVeriffSession } from '@/app/actions/veriff';
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: Request) {
   let veriff: any = null;
   try {
     veriff = await getVeriffLink('Ilya', 'Druzhinin');
@@ -10,5 +9,5 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
     console.error(error);
   }
   console.log(veriff);
-  res.json({ client: req.cookies.session || null });
+  return new Response("OK", { status: 200 })
 }
