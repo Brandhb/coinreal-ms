@@ -73,3 +73,9 @@ export const validateString = (value: unknown, maxLength: number) => {
   if(!value || typeof value !== "string" || value.length > maxLength) return false;
   return true;
 };
+
+export const extractVerificationData = (payload: any) => {
+  const verificationStatus = payload?.verification?.status;
+  const userId = payload?.verification?.vendorData; // Assuming vendorData contains user ID
+  return { verificationStatus, userId };
+};

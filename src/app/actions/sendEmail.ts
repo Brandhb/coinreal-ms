@@ -10,8 +10,6 @@ type Inputs = z.infer<typeof ContactFormSchema>
 
 export const sendEmail = async (data: Inputs) => {
   const result = ContactFormSchema.safeParse(data)
-
-    debugger;
     if (result.success) {
       const { name, senderEmail, message } = result.data
       try {

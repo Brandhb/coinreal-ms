@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:16-alphine
+    ports:
+     - 5432:5432
+    environment:
+     POSTGRES_DB: webapp_dev
+     POSTGRES_HOST_METHOD: trust
+
+

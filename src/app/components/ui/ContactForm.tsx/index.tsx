@@ -39,7 +39,6 @@ const ContactFrom = () => {
   const [loading, setLoading] = useState(false);
 
   const processForm: SubmitHandler<Inputs> = async (formData) => {
-    debugger;
     console.log('formData: ', formData)
     try {
       setLoading(true);

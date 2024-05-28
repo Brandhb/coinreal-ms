@@ -9,7 +9,8 @@ import { cn, constructMetadata } from "@/lib/utils";
 import Navbar from "@/app/components/layout/Navbar";
 import Footer from "@/app/components/layout/Footer";
 import "./globals.css";
-import { Toaster } from "@/app/components/ui/shadcn/sonner"
+import { Toaster } from "@/app/components/ui/shadcn/sonner";
+import { UserProvider } from "@/context/UserContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,15 +28,15 @@ export default function RootLayout({
       <body
         className={cn("relative h-full font-sans antialiased", inter.className)}
       >
-        
-
         <Toaster />
         <main className="relative flex flex-col min-h-screen bg-gradient-to-r from-fuchsia-500 to-cyan-500">
           <ClerkProvider>
             <ThirdwebProvider>
-              <Navbar />
-              <div className="flex-grow flex-1 py-20">{children}</div>
-              <Footer />
+              <UserProvider>
+                <Navbar />
+                <div className="flex-grow flex-1 py-20">{children}</div>
+                <Footer />
+              </UserProvider>
             </ThirdwebProvider>
           </ClerkProvider>
         </main>
