@@ -6,7 +6,7 @@ import { createVeriffFrame } from "@veriff/incontext-sdk";
 
 const VeriffComponent: FC = () => {
   useEffect(() => {
-    const veriff = Veriff.Veriff({
+    const veriff = Veriff?.Veriff({
       host: process.env.NEXT_PUBLIC_VERIFF_BASE_URL,
       apiKey: process.env.NEXT_PUBLIC_VERIFF_API_KEY,
       parentId: "veriff-root",
