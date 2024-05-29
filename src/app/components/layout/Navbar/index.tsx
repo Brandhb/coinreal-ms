@@ -26,13 +26,13 @@ const Navbar: FC = () => {
       id: "approve",
       style: toastStyle,
       position: "bottom-center",
-    });*/}
+    });
     toast("Approval successful.", {
       icon: "👍",
       id: "approve",
       style: toastStyle,
       position: "bottom-center",
-    });
+    });*/}
   }, [])
   
 

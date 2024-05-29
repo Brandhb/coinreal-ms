@@ -1,10 +1,12 @@
+'use client'
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import React, { useEffect } from "react";
 import { Smile, Fingerprint, DollarSign } from "lucide-react";
 import Perk from "@/app/components/ui/Perk";
 import { Toaster } from "@/app/components/ui/shadcn/sonner"
 import toastStyle from "@/utils/toastConfig";
-import { toast } from "sonner"
+//import { toast } from "sonner"
+import toast from "react-hot-toast";
 
 const features = [
   {
@@ -28,9 +30,9 @@ const features = [
 ];
 
 const Page = () => {
-
-  
-    {/*toast.loading("Approving...", {
+{/*
+  useEffect(() => {
+    toast.loading("Approving...", {
       id: "approve",
       style: toastStyle,
       position: "bottom-center",
@@ -41,6 +43,13 @@ const Page = () => {
       style: toastStyle,
       position: "bottom-center",
     });
+    toast.error("Error", {
+      style: toastStyle,
+      position: "bottom-center",
+    });
+  }, [])
+  
+    
     toast("Event has been created", {
       description: "Sunday, December 03, 2023 at 9:00 AM",
       action: {
