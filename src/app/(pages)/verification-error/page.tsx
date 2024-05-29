@@ -1,6 +1,7 @@
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import VerificationErrorComp from "@/app/components/ui/VerificationErrorComp";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Verification Error",
@@ -19,7 +20,9 @@ export default function VerificationErrorPage() {
           </div>
         </header>
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <VerificationErrorComp />
+          <Suspense>
+            <VerificationErrorComp />
+          </Suspense>
         </main>
       </MaxWidthWrapper>
     </div>
