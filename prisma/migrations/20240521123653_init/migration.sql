@@ -16,3 +16,4 @@ CREATE UNIQUE INDEX "users_clerkUserId_key" ON "users"("clerkUserId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
+
