@@ -3,7 +3,6 @@
 import { FC, useEffect } from "react";
 const Veriff = require("@veriff/js-sdk");
 import { createVeriffFrame } from "@veriff/incontext-sdk";
-import { redirect } from "next/navigation";
 
 const VeriffComponent: FC = () => {
   useEffect(() => {
