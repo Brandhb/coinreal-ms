@@ -1,7 +1,6 @@
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import VerificationErrorComp from "@/app/components/ui/VerificationErrorComp";
 import { Metadata } from "next";
-import { useSearchParams } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Verification Error",
