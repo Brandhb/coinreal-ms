@@ -1,35 +1,39 @@
 "use client";
 
 import { FC, useEffect } from "react";
-const Veriff = require("@veriff/js-sdk");
-import { createVeriffFrame } from "@veriff/incontext-sdk";
+import dynamic from "next/dynamic";
 
 const VeriffComponent: FC = () => {
   useEffect(() => {
-    const veriff = Veriff?.Veriff({
-      host: process.env.NEXT_PUBLIC_VERIFF_BASE_URL,
-      apiKey: process.env.NEXT_PUBLIC_VERIFF_API_KEY,
-      parentId: "veriff-root",
-      onSession: function (err: any, response: any) {
-        // received the response, verification can be started now
-        if (err) console.log("err: ", err);
-        console.log("response: ", response);
-        // incontext sdk - open iframe
-        createVeriffFrame({ url: response.verification.url });
-      },
-    });
+    if (typeof window !== "undefined") {
+      const Veriff = require("@veriff/js-sdk");
+      const { createVeriffFrame } = require("@veriff/incontext-sdk");
 
-    veriff?.mount({
-      formLabel: {
-        givenName: "First name",
-        lastName: "Family name",
-        vendorData: "ID Number",
-      },
-      submitBtnText: "Get verified",
-      loadingText: "Please wait...",
-    });
+      const veriff = Veriff?.Veriff({
+        host: process.env.NEXT_PUBLIC_VERIFF_BASE_URL,
+        apiKey: process.env.NEXT_PUBLIC_VERIFF_API_KEY,
+        parentId: "veriff-root",
+        onSession: function (err: any, response: any) {
+          // received the response, verification can be started now
+          if (err) console.log("err: ", err);
+          console.log("response: ", response);
+          // incontext sdk - open iframe
+          createVeriffFrame({ url: response.verification.url });
+        },
+      });
 
-    console.log("veriff: ", veriff);
+      veriff?.mount({
+        formLabel: {
+          givenName: "First name",
+          lastName: "Family name",
+          vendorData: "ID Number",
+        },
+        submitBtnText: "Get verified",
+        loadingText: "Please wait...",
+      });
+
+      console.log("veriff: ", veriff);
+    }
   }, []); // Run only once on component mount
 
   return (
