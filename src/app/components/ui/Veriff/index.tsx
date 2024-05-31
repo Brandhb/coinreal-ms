@@ -19,7 +19,7 @@ const VeriffComponent: FC = () => {
       },
     });
 
-    veriff.mount({
+    veriff?.mount({
       formLabel: {
         givenName: "First name",
         lastName: "Family name",
