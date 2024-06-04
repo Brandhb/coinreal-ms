@@ -1,6 +1,6 @@
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import VeriffComponent from "@/app/components/ui/Veriff";
-import React, { Suspense } from "react";
+import React from "react";
 
 const AccountVerificationPage = () => {
   return (
@@ -17,10 +17,7 @@ const AccountVerificationPage = () => {
           </header>
         </MaxWidthWrapper>{" "}
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex justify-center">
-          <Suspense>
-            <VeriffComponent />
-          </Suspense>
-          
+          <VeriffComponent />
         </main>
       </div>
     </>
