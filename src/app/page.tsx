@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import Perk from "./components/ui/Perk";
 import VeriffComponent from "./components/ui/Veriff";
+import { HowItWorks } from "./components/mainPage/HowItWorks";
 
 const perks = [
   {
@@ -62,7 +63,7 @@ export default function Home() {
           ></path>
         </svg>
         <section className="bg-gray-50 border-gray-50 border-2">
-          <MaxWidthWrapper className="lg:py-0 md:py-10 sm:py-10">
+          <MaxWidthWrapper className="lg:py-0 md:py-10 sm:py-10 space-y-36">
             <div
               className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0"
               style={{ marginTop: "0" }}
@@ -115,15 +116,16 @@ export default function Home() {
               </div>
             </section>
 
-            {/* How It Works Section */}
+            {/* How It Works Section 
             <section className="bg-gray-100 py-20">
               <div className="container mx-auto">
                 <h2 className="text-3xl font-semibold mb-8 text-center">
                   How It Works
                 </h2>
-                {/* Include steps on how the platform works */}
+
               </div>
-            </section>
+            </section>*/}
+            <HowItWorks />
 
             {/* Testimonials Section 
             <section className="py-20">

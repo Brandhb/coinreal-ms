@@ -1,26 +1,76 @@
+import { ShieldCheck, Lock, UserCheck, FileText, User, Key, Globe, FileSearch, RefreshCw, PhoneCall } from "lucide-react";
+
+
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
-import React from "react";
-import { ShieldCheck, Lock, UserCheck } from "lucide-react";
 import Perk from "@/app/components/ui/Perk";
+
 
 const perks = [
   {
     Icon: ShieldCheck,
-    title: "Security Measures",
+    title: "Introduction",
     description:
-      "We implement robust security measures to safeguard your personal information and ensure the confidentiality of your transactions.",
+      "Ways2Coin ('Ways2Coin,' 'we,' 'us,' or 'our') is committed to protecting the privacy and security of your personal information. This Privacy Policy outlines our practices regarding the collection, use, disclosure, and protection of your personal information in accordance with the Australian Privacy Act 1988 (Cth) and other applicable privacy laws.",
+  },
+  {
+    Icon: User,
+    title: "Collection of Personal Information",
+    description:
+      "We collect personal information from you when you interact with us, such as when you visit our website, use our mobile applications, or engage with our services. The types of personal information we may collect include: Name, address, and contact details; Date of birth; Identification documents (e.g., passport, driver's license); Transactional information (e.g., payment details, digital wallet addresses); Usage data and logs (e.g., IP address, browser type, pages visited); Any other information you choose to provide to us. We may collect personal information directly from you or from third parties, such as our service providers or business partners, where permitted by law.",
+  },
+  {
+    Icon: FileText,
+    title: "Use of Personal Information",
+    description:
+      "We use your personal information for the following purposes: Providing and improving our services; Communicating with you, including responding to your inquiries and providing customer support; Processing transactions, including facilitating payments and verifying your identity; Marketing and promotional purposes, including sending you marketing communications about our products and services; Conducting research and analysis to improve our products and services; Complying with legal and regulatory requirements.",
   },
   {
     Icon: Lock,
-    title: "Data Encryption",
+    title: "Disclosure of Personal Information",
     description:
-      "All data transmitted through our platform is encrypted using the latest encryption standards, providing an additional layer of security.",
+      "We may disclose your personal information to third parties in the following circumstances: To our service providers and business partners who assist us in providing our services and conducting our business; To comply with legal obligations, such as responding to lawful requests from government authorities; To protect our rights, property, or safety, or the rights, property, or safety of others; With your consent or as otherwise permitted by law.",
+  },
+  {
+    Icon: Key,
+    title: "Security of Personal Information",
+    description:
+      "We take reasonable steps to protect your personal information from misuse, loss, unauthorized access, modification, or disclosure. These steps include implementing technical and organizational measures to secure your personal information, such as encryption, access controls, and regular security assessments.",
+  },
+  {
+    Icon: RefreshCw,
+    title: "Cookies and Similar Technologies",
+    description:
+      "We use cookies and similar technologies to collect information and enhance your experience on our website and mobile applications. Cookies are small files stored on your device that contain data about your browsing behavior. You can manage your cookie preferences through your browser settings.",
+  },
+  {
+    Icon: Globe,
+    title: "Overseas Disclosure",
+    description:
+      "We may disclose your personal information to overseas recipients, including in countries outside Australia, where necessary for the purposes described in this Privacy Policy. We take steps to ensure that overseas recipients comply with applicable privacy laws and provide a similar level of protection to your personal information.",
+  },
+  {
+    Icon: FileSearch,
+    title: "Accessing and Correcting Your Personal Information",
+    description:
+      "You have the right to access and correct your personal information held by us. If you would like to access or correct your personal information, please contact us using the details provided below. We may request additional information from you to verify your identity before providing access or making corrections.",
   },
   {
     Icon: UserCheck,
-    title: "Verification Process",
+    title: "Complaints",
     description:
-      "To ensure compliance with regulatory requirements and prevent fraud, we require users to undergo a thorough verification process.",
+      "If you have a complaint about our handling of your personal information, please contact us using the details provided below. We will investigate your complaint and provide you with a response in a timely manner. If you are not satisfied with our response, you may lodge a complaint with the Office of the Australian Information Commissioner (OAIC).",
+  },
+  {
+    Icon: RefreshCw,
+    title: "Changes to this Privacy Policy",
+    description:
+      "We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any material changes to this Privacy Policy by posting the updated policy on our website. We encourage you to review this Privacy Policy periodically for any updates.",
+  },
+  {
+    Icon: PhoneCall,
+    title: "Contact Us",
+    description:
+      "If you have any questions about this Privacy Policy or our privacy practices, or if you would like to exercise your rights regarding your personal information, please contact us at support@ways2coin.com.",
   },
 ];
 
@@ -61,7 +111,7 @@ const page = () => {
                 />
               ))}
             </div>
-            <div className="mt-32 md:flex md:space-x-8">
+            <div className="mt-32 md:flex md:space-x-8 space-y-12 md:space-y-0">
               {/* Left part */}
               <div className="md:w-1/2 md:pr-8">
                 <h2 className="text-3xl font-bold text-gray-900 md:text-left">
