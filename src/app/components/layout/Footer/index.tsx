@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer: React.FC = () => {
   const handleContactUsClick = () => {
-    window.location.href = "mailto:developer@goldy.team";
+    window.location.href = "mailto:support@ways2coin.com";
   };
 
   return (
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
               out to us using the contact information below.
             </p>
             <div className=" mb-4">
-              <p>Email: support@ways2coin</p>
+              <p>Email: support@ways2coin.com</p>
             </div>
             <button
               onClick={handleContactUsClick}
