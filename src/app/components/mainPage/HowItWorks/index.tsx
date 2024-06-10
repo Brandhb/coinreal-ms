@@ -2,9 +2,14 @@ export const HowItWorks = () => {
   return (
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-12">
-          How It Works
-        </h2>
+        <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl space-y-4">
+          <h1 className="text-3xl px-4 font-bold tracking-tight text-gray-900 sm:text-3xl leading-24">
+            How It Works
+          </h1>
+          <h3 className="text-lg mb-8 text-gray-500">
+            Learn about the simple steps to start using Ways2Coin
+          </h3>
+        </div>
 
         <div className="flex flex-col items-center space-y-10 md:space-y-10 my-16">
           {/* Step 1 */}
@@ -13,7 +18,8 @@ export const HowItWorks = () => {
               <span className="text-4xl font-bold text-cyan-500 mb-4">01.</span>
               <h3 className="text-xl font-semibold mb-4">Create an Account</h3>
               <p className="text-gray-600">
-                Sign up and confirm your identity to get started. It&apos;s quick and easy!
+                Sign up and confirm your identity to get started. It&apos;s
+                quick and easy!
               </p>
             </div>
           </div>
@@ -34,7 +40,8 @@ export const HowItWorks = () => {
               <span className="text-4xl font-bold text-cyan-500 mb-4">02.</span>
               <h3 className="text-xl font-semibold mb-4">Add Funds</h3>
               <p className="text-gray-600">
-                Deposit money into your wallet using a convenient method. We support various payment options.
+                Deposit money into your wallet using a convenient method. We
+                support various payment options.
               </p>
             </div>
           </div>
@@ -48,14 +55,15 @@ export const HowItWorks = () => {
               </g>
             </svg>
           </div>
-          
+
           {/* Step 3 */}
           <div className="flex flex-col items-center text-center px-6 md:px-0">
             <div className="flex flex-col justify-center items-center bg-white p-8 rounded-lg shadow-md w-full md:w-[30rem] md:h-80">
               <span className="text-4xl font-bold text-cyan-500 mb-4">03.</span>
               <h3 className="text-xl font-semibold mb-4">Begin Trading</h3>
               <p className="text-gray-600">
-                Start buying, selling, and managing cryptocurrencies effortlessly. Our intuitive platform makes it simple for you.
+                Start buying, selling, and managing cryptocurrencies
+                effortlessly. Our intuitive platform makes it simple for you.
               </p>
             </div>
           </div>

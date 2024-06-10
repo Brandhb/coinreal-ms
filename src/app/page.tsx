@@ -88,22 +88,21 @@ export default function Home() {
           ></path>
         </svg>
         <section className="bg-gray-50 border-gray-50 border-2">
-          <MaxWidthWrapper className="lg:pt-0 pb-24 md:py-10 sm:py-10 space-y-16">
+          <MaxWidthWrapper className="lg:pt-0 lg:mt-[-200px] pb-24 md:py-10 sm:py-10 space-y-16 lg:space-y-32">
             {/* perks section */}
-            <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl space-y-10">
-          <h1 className="text-3xl px-4 font-bold tracking-tight text-gray-900 sm:text-3xl leading-24">
+            <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl space-y-4">
+              <h1 className="text-3xl px-4 font-bold tracking-tight text-gray-900 sm:text-3xl leading-24">
                 The most trusted cryptocurrency platform
               </h1>
               <h3 className="text-lg mb-8 text-gray-500">
                 Here are a few reasons why you should choose Ways2Coin
               </h3>
             </div>
-            
+
             <div
               className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0"
-              style={{ marginTop: "0" }}
+              style={{ marginTop: "0px" }}
             >
-              
               {perks.map((perk) => (
                 <Perk
                   key={perk.name}

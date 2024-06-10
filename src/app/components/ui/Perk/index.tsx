@@ -9,7 +9,7 @@ const Perk = ({title, Icon, description}: PerkType) => {
   return (
     <div
       key={title}
-      className="text-center md:flex md:items-start md:text-left lg:block lg:text-center mx-2"
+      className="text-center md:flex md:items-start md:text-left lg:block lg:text-center mx-2 mb-12"
     >
       <div className="md:flex-shrink-0 flex justify-center">
         <div className="h-16 w-16 flex items-center justify-center rounded-full bg-blue-100 text-blue-900">

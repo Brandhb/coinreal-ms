@@ -113,14 +113,22 @@ const Testimonials: React.FC = () => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <section className="relative py-12">
+    <section className="relative">
+      <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl space-y-4">
+          <h1 className="text-3xl px-4 font-bold tracking-tight text-gray-900 sm:text-3xl leading-24">
+            What Our Customers Say
+          </h1>
+          <h3 className="text-lg mb-8 text-gray-500">
+            Discover why users trust Ways2Coin for their cryptocurrency needs
+          </h3>
+        </div>
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {slides.map((testimonial) => (
             <div className="flex-[0_0_100%] p-4" key={testimonial.id}>
               <blockquote className="flex h-full flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
                 <div>
-                  <div className="flex gap-0.5 text-yellow-500">
+                  <div className="flex gap-0.5 text-cyan-500">
                     {Array.from({ length: testimonial.rating }, (_, i) => (
                       <svg
                         key={i}
@@ -134,7 +142,7 @@ const Testimonials: React.FC = () => {
                     ))}
                   </div>
                   <div className="mt-4">
-                    <h3 className="text-2xl font-bold text-cyan-500 sm:text-3xl">
+                    <h3 className="text-2xl font-bold text-gray-700 sm:text-3xl">
                       {testimonial.title}
                     </h3>
                     <p className="mt-4 text-gray-600">{testimonial.content}</p>
