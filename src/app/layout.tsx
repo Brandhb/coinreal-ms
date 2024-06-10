@@ -1,7 +1,4 @@
 import { Inter } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
-import { dark, neobrutalism, shadesOfPurple } from "@clerk/themes";
-import { ThirdwebProvider } from "thirdweb/react";
 
 import { Toaster } from "react-hot-toast";
 
@@ -10,8 +7,8 @@ import Navbar from "@/app/components/layout/Navbar";
 import Footer from "@/app/components/layout/Footer";
 import "./globals.css";
 //import { Toaster } from "@/app/components/ui/shadcn/sonner";
-import { UserProvider } from "@/context/UserContext";
-import Providers from "./components/Providers";
+import Providers from "@/app/components/Providers";
+import { InformationalBanner } from "@/app/components/ui/InformationalBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +21,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en" className="h-full">
       <body
@@ -34,6 +32,7 @@ export default function RootLayout({
           <Providers>
             <Navbar />
             <div className="flex-grow flex-1 py-20">{children}</div>
+            <InformationalBanner />
             <Footer />
           </Providers>
         </main>

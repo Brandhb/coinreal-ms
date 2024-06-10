@@ -94,6 +94,7 @@ const updateUserVerificationStatus = async (userId: string, verificationStatus: 
 
 // Function to fetch user's verification status from the database
 export const fetchVerificationStatus = async (userId: string): Promise<string> => {
+  debugger;
   try {
     // Fetch the user from the database
     const cacheKey = `userId:${userId}`;
@@ -122,8 +123,8 @@ export const fetchVerificationStatus = async (userId: string): Promise<string> =
       throw new Error("User not found");
     }
   } catch (error) {
-    console.error("Error fetching verification status:", error);
-    throw new Error("Failed to fetch verification status");
+    console.error("Error fetching verification status - ", error);
+    throw new Error(`Failed to fetch verification status: ${error}`);
   }
 }
 

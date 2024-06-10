@@ -2,7 +2,7 @@ import { db } from "@/lib/db";
 import { formatName } from "@/utils/nameFormat";
 import { WebhookEvent } from "@clerk/nextjs/server";
 
-export const  handleEvent = async (evt: WebhookEvent) => {
+export const handleEvent = async (evt: WebhookEvent) => {
   const { type: eventType, data } = evt;
   
   switch (eventType) {

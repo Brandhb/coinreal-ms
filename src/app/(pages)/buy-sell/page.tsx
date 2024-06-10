@@ -49,7 +49,7 @@ export default function Page() {
     if (!loading && verificationStatus !== "approved") {
       const message = verificationStatusMessages[verificationStatus] || "Unknown verification status";
       router.push(`/verification-error?reason=${encodeURIComponent(message)}`);
-    }
+    } 
   }, [verificationStatus, loading, router]);
 
   if (loading) {

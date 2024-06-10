@@ -87,9 +87,7 @@ const Page = () => {
           <MaxWidthWrapper className="py-20 px-5 md:px-10 lg:px-32">
             <div className="mt-12 grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
               {features.map((feature, index) => (
-                <>
-                  <Perk title={feature.title}  Icon={feature.Icon} description={feature.description}/>
-                </>
+                  <Perk key={feature.title} title={feature.title}  Icon={feature.Icon} description={feature.description}/>
               ))}
             </div>
             <div className="mt-32 md:flex md:space-x-8">

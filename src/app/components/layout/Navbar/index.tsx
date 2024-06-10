@@ -42,7 +42,7 @@ const Navbar: FC = () => {
         <div className="flex justify-between items-center py-4">
           {/* Left Section: Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="text-xl font-bold text-white">
+            <a href="/" className="text-xl font-bold text-gray-700">
               Ways2Coin
             </a>
             {/*<ConnectButton
@@ -54,19 +54,19 @@ const Navbar: FC = () => {
 
           {/* Middle Section: Route Links (Hidden on Mobile) */}
           <div className="hidden md:flex flex-grow justify-center items-center space-x-6">
-            <a href="/about" className="text-white hover:text-gray-300">
+            <a href="/about" className="text-gray-700 hover:text-gray-300">
               About Us
             </a>
-            <a href="/buy-sell" className="text-white hover:text-gray-300">
+            <a href="/buy-sell" className="text-gray-700 hover:text-gray-300">
               Buy & Sell
             </a>
             <a
               href="/personal-wallet"
-              className="text-white hover:text-gray-300"
+              className="text-gray-700 hover:text-gray-300"
             >
               Your Personal Wallet
             </a>
-            <a href="/contact" className="text-white hover:text-gray-300">
+            <a href="/contact" className="text-gray-700 hover:text-gray-300">
               Contact
             </a>
           </div>
@@ -84,7 +84,7 @@ const Navbar: FC = () => {
               <SignInButton>
                 <a
                   href="/sign-in"
-                  className="text-gray-200 underline hover:text-gray-300"
+                  className="text-gray-700 underline hover:text-gray-500"
                 >
                   Sign-in
                 </a>
@@ -109,7 +109,7 @@ const Navbar: FC = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMobileMenu}
-              className="text-white focus:outline-none"
+              className="text-gray-700 focus:outline-none"
             >
               <svg
                 className="w-6 h-6"
