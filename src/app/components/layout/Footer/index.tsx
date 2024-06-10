@@ -8,9 +8,8 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-transparent">
-      
       <div className="mx-auto w-full max-w-screen p-4 px-12 py-6 lg:py-8">
-      <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="md:flex md:justify-between text-white">
           {/* Logo */}
           <div className="mb-6 md:mb-0">
@@ -22,7 +21,9 @@ const Footer: React.FC = () => {
           </div>
           {/* Contact */}
           <div className="pb-6 flex flex-col  max-w-[400px]">
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact Us</h2>
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              Contact Us
+            </h2>
             <p className=" mb-4">
               Have questions or feedback? We&apos;d love to hear from you! Reach
               out to us using the contact information below.
@@ -101,13 +102,27 @@ const Footer: React.FC = () => {
               </h2>
               <ul className="text-white font-medium">
                 <li className="mb-4">
-                  <a href="/privacy" className="hover:underline hover:text-gray-300">
+                  <a
+                    href="/privacy"
+                    className="hover:underline hover:text-gray-300"
+                  >
                     Privacy Policy
                   </a>
                 </li>
-                <li>
-                  <a href="/terms" className="hover:underline hover:text-gray-300">
+                <li className="mb-4">
+                  <a
+                    href="/terms"
+                    className="hover:underline hover:text-gray-300"
+                  >
                     Terms &amp; Conditions
+                  </a>
+                </li>
+                <li className="mb-4">
+                  <a
+                    href="/aml-policy"
+                    className="hover:underline hover:text-gray-300"
+                  >
+                    Anti-Money Laundering (AML) Policy
                   </a>
                 </li>
               </ul>
