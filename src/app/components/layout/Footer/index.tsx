@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
               <ul className="text-white font-medium">
                 <li className="mb-4">
                   <a
-                    href="/About"
+                    href="/about"
                     className="hover:underline hover:text-gray-300"
                   >
                     About Us

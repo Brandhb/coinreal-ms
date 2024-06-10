@@ -90,7 +90,7 @@ const Page = () => {
                   <Perk key={feature.title} title={feature.title}  Icon={feature.Icon} description={feature.description}/>
               ))}
             </div>
-            <div className="mt-32 md:flex md:space-x-8">
+            <div className="mt-32 md:flex md:space-x-8 ">
               {/* Left part */}
               <div className="md:w-1/2 md:pr-8">
                 <h2 className="text-3xl font-bold text-gray-900 md:text-left">
@@ -99,7 +99,7 @@ const Page = () => {
               </div>
 
               {/* Right part */}
-              <div className="md:w-1/2 space-y-7">
+              <div className="md:w-1/2 space-y-7 mt-4">
                 <div className="rext0md text-gray-800">
                   <p className="md:text-left">
                     At Ways2Coin, we&apos;re committed to providing Australians

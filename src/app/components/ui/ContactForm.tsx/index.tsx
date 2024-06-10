@@ -55,12 +55,11 @@ const ContactFrom = () => {
 
   return (
     <div className="lg:py-0 md:py-10 sm:py-10">
-      <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0"></div>
-      <motion.div variants={slideIn("left", "tween", 0.2, 1)} className="">
+      <div className="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0"></div>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(processForm)}
-            className="mt-12 flex flex-col gap-8"
+            className="mt-12 flex flex-col gap-4"
           >
             <label className="flex flex-col">
               <span className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -110,13 +109,12 @@ const ContactFrom = () => {
             </label>
 
             <button
-              className="bg-blue-500 max-w-40 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow"
+              className="bg-blue-500 max-w-40 hover:bg-blue-600 text-white font-semibold mt-2 py-2 px-4 rounded shadow"
             >
               Send Email
             </button>
           </form>
         </Form>
-      </motion.div>
     </div>
   );
 };

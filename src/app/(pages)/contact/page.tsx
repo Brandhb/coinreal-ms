@@ -6,7 +6,7 @@ import React from "react";
 const page = () => {
   return (
     <>
-        <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+        <div className="py-8 lg:py-16 px-12 mx-auto max-w-screen-md">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl leading-24">
             Contact Us
           </h1>

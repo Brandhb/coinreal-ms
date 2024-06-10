@@ -32,7 +32,7 @@ export const InformationalBanner = () => {
       className="fixed bottom-0 left-0 z-50 flex flex-col justify-between w-full p-4 border-t border-gray-200 md:flex-row bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
     >
       <div className="mb-4 md:mb-0 md:me-4">
-        <h2 className="mb-1 text-base font-semibold text-gray-900 dark:text-white flex items-center">
+        <h2 className="mb-1 font-semibold text-gray-900 dark:text-white flex items-center">
           <UserCheck className="w-5 h-5 mr-2 text-red-500" />
           <span>
             <u className="text-red-500">Registration:</u>  Complete Your
@@ -40,7 +40,7 @@ export const InformationalBanner = () => {
           </span>
         </h2>
         <p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-          To get started with buying or selling cryptocurrency on Ways2coin,
+          To get started with buying or selling cryptocurrency on Ways2Coin,
           please complete our identification process as required by government
           regulations. 
         </p>

@@ -22,7 +22,8 @@ const Navbar: FC = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
   useEffect(() => {
-    {/*toast.loading("Approving...", {
+    {
+      /*toast.loading("Approving...", {
       id: "approve",
       style: toastStyle,
       position: "bottom-center",
@@ -32,9 +33,9 @@ const Navbar: FC = () => {
       id: "approve",
       style: toastStyle,
       position: "bottom-center",
-    });*/}
-  }, [])
-  
+    });*/
+    }
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur bg-opacity-30 py-4">
@@ -132,16 +133,13 @@ const Navbar: FC = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-white shadow-md">
             <div className="flex flex-col space-y-4 py-4 px-6">
-              <a href="#" className="text-gray-800 font-medium">
-                Home
-              </a>
-              <a href="#" className="text-gray-800 font-medium">
+              <a href="/about" className="text-gray-800 font-medium">
                 About
               </a>
-              <a href="#" className="text-gray-800 font-medium">
-                Services
+              <a href="/buy-sell" className="text-gray-800 font-medium">
+                Buy & Sell
               </a>
-              <a href="#" className="text-gray-800 font-medium">
+              <a href="/contact" className="text-gray-800 font-medium">
                 Contact
               </a>
             </div>

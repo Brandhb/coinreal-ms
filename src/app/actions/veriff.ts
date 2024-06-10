@@ -94,6 +94,7 @@ const updateUserVerificationStatus = async (userId: string, verificationStatus: 
 
 // Function to fetch user's verification status from the database
 export const fetchVerificationStatus = async (userId: string): Promise<string> => {
+  debugger;
   try {
     // Fetch the user from the database
     const cacheKey = `userId:${userId}`;

@@ -13,7 +13,7 @@ export default function VerificationErrorPage() {
     <div className="py-8 lg:py-16 mx-auto max-w-6xl space-y-10">
       <MaxWidthWrapper>
         <header>
-          <div className="py-2">
+          <div className="py-2 px-4">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl leading-24">
               Verification Error
             </h1>

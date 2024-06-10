@@ -78,7 +78,7 @@ const page = () => {
   return (
     <>
       <MaxWidthWrapper>
-        <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl space-y-10">
+        <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl space-y-10 px-4">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
             Privacy Policy
           </h2>
@@ -89,7 +89,7 @@ const page = () => {
       </MaxWidthWrapper>
       <div className="relative bg-transparent mt-[-100px]">
         <svg
-          style={{ marginBottom: "-20px" }}
+          style={{ marginBottom: "-20px", marginTop: "50px" }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
         >
