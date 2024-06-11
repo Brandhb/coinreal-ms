@@ -46,7 +46,7 @@ export default function Home() {
             <span className="text-blue-600">Trade Cryptocurrencies</span>.
           </h1>
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <Link href="/products" className={buttonVariants()}>
+            <Link href="#" className={buttonVariants()}>
               Browse Trending
             </Link>
             <Button variant="ghost">
