@@ -25,7 +25,11 @@ export const InformationalBanner = () => {
   }, [user]);
 
   const isVerified = verificationStatus === "approved" ? true : false;
-  return user && (verificationStatus !== "approved" || verificationStatus === null) ? (
+  if (!user || verificationStatus === "" || verificationStatus === "approved") {
+    return <></>;
+  }
+
+  return (
     <div
       id="informational-banner"
       tabIndex={-1}
@@ -84,39 +88,36 @@ export const InformationalBanner = () => {
           </svg>
         </a>
         <button
-  onClick={() => {
-    const banner = document.getElementById("informational-banner");
-    if (banner) {
-        banner.style.display = "none";
-      }
-  }}
-  type="button"
-  className="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200
-   hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white 
-    absolute top-4 right-2
-    md:relative md:top-auto md:right-auto md:-mt-0 md:ml-auto md:mr-auto"
->
-  <svg
-    className="w-3 h-3"
-    aria-hidden="true"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 14 14"
-  >
-    <path
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-    />
-  </svg>
-  <span className="sr-only">Close banner</span>
-</button>
-
+          onClick={() => {
+            const banner = document.getElementById("informational-banner");
+            if (banner) {
+              banner.style.display = "none";
+            }
+          }}
+          type="button"
+          className="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200
+           hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white 
+            absolute top-4 right-2
+            md:relative md:top-auto md:right-auto md:-mt-0 md:ml-auto md:mr-auto"
+        >
+          <svg
+            className="w-3 h-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 14"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+            />
+          </svg>
+          <span className="sr-only">Close banner</span>
+        </button>
       </div>
     </div>
-  ) : (
-    <></>
   );
 };
