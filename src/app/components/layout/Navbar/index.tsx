@@ -62,10 +62,10 @@ const Navbar: FC = () => {
               Buy & Sell
             </a>
             <a
-              href="/personal-wallet"
+              href="/wallet-info"
               className="text-gray-700 hover:text-gray-300"
             >
-              Your Personal Wallet
+              Wallet
             </a>
             <a href="/contact" className="text-gray-700 hover:text-gray-300">
               Contact
@@ -138,6 +138,9 @@ const Navbar: FC = () => {
               </a>
               <a href="/buy-sell" className="text-gray-800 font-medium">
                 Buy & Sell
+              </a>
+              <a href="/wallet-info" className="text-gray-800 font-medium">
+                Wallet
               </a>
               <a href="/contact" className="text-gray-800 font-medium">
                 Contact

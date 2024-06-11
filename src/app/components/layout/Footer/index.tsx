@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
             </a>
           </div>
           {/* Contact */}
-          <div className="pb-6 flex flex-col  max-w-[400px]">
+          <div className="pb-6 px-0 md:px-4 flex flex-col  max-w-[400px]">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
               Contact Us
             </h2>

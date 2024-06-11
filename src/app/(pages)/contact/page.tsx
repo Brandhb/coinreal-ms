@@ -10,7 +10,7 @@ const page = () => {
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl leading-24">
             Contact Us
           </h1>
-          <p className="text-lg text-gray-700 sm:text-xl my-10">
+          <p className="text-lg text-gray-700 sm:text-xl mt-10">
             Got a technical issue? Want to send feedback about a beta feature?
             Need details about our Business plan? Let us know.
           </p>

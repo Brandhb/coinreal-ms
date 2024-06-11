@@ -29,20 +29,21 @@ export const InformationalBanner = () => {
     <div
       id="informational-banner"
       tabIndex={-1}
-      className="fixed bottom-0 left-0 z-50 flex flex-col justify-between w-full p-4 border-t border-gray-200 md:flex-row bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
+      className="fixed bottom-0 left-0 z-50 flex flex-col justify-between w-full
+       p-4 border-t border-gray-200 md:flex-row bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
     >
       <div className="mb-4 md:mb-0 md:me-4">
         <h2 className="mb-1 font-semibold text-gray-900 dark:text-white flex items-center">
           <UserCheck className="w-5 h-5 mr-2 text-red-500" />
           <span>
-            <u className="text-red-500">Registration:</u>  Complete Your
+            <u className="text-red-500">Registration:</u> Complete Your
             Identification Process
           </span>
         </h2>
         <p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
           To get started with buying or selling cryptocurrency on Ways2Coin,
           please complete our identification process as required by government
-          regulations. 
+          regulations.
         </p>
       </div>
       <div className="flex items-center flex-shrink-0">
@@ -83,27 +84,36 @@ export const InformationalBanner = () => {
           </svg>
         </a>
         <button
-          data-dismiss-target="#informational-banner"
-          type="button"
-          className="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white"
-        >
-          <svg
-            className="w-3 h-3"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 14"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-            />
-          </svg>
-          <span className="sr-only">Close banner</span>
-        </button>
+  onClick={() => {
+    const banner = document.getElementById("informational-banner");
+    if (banner) {
+        banner.style.display = "none";
+      }
+  }}
+  type="button"
+  className="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200
+   hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white 
+    absolute top-4 right-2
+    md:relative md:top-auto md:right-auto md:-mt-0 md:ml-auto md:mr-auto"
+>
+  <svg
+    className="w-3 h-3"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 14 14"
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+    />
+  </svg>
+  <span className="sr-only">Close banner</span>
+</button>
+
       </div>
     </div>
   ) : (
