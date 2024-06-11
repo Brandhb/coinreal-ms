@@ -25,7 +25,7 @@ export const InformationalBanner = () => {
   }, [user]);
 
   const isVerified = verificationStatus === "approved" ? true : false;
-  if (!user || verificationStatus === "" || verificationStatus === "approved") {
+  if (!user || loading || verificationStatus === "approved") {
     return <></>;
   }
 
