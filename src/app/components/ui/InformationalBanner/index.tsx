@@ -25,7 +25,7 @@ export const InformationalBanner = () => {
   }, [user]);
 
   const isVerified = verificationStatus === "approved" ? true : false;
-  return user && !isVerified ? (
+  return user && (verificationStatus !== "approved" || verificationStatus === null) ? (
     <div
       id="informational-banner"
       tabIndex={-1}
