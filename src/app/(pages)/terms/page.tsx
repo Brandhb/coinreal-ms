@@ -308,9 +308,9 @@ const TermsPage = () => {
         </div>
       </MaxWidthWrapper>
 
-      <div className="relative bg-transparent mt-[-100px]">
+      <div className="relative bg-transparent mt-[-40px] md:mt-[-130px] lg:mt-[-150px]">
         <svg
-          style={{ marginBottom: "-20px", marginTop: "50px" }}
+          style={{ marginBottom: "-20px" }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
         >
