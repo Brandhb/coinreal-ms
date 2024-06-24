@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
@@ -6,10 +6,10 @@ import { Metadata } from "next";
 import { useMutation } from "@tanstack/react-query";
 
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
-import { fetchVerificationStatus } from '@/app/actions/veriff'
+import { fetchVerificationStatus } from "@/app/actions/veriff";
 import BuySellSkeleton from "@/app/components/ui/skeleton/BuySell";
 import StepperForm from "@/app/components/exchangeStepperForm";
-
+import ExchangeWidget from '@/app/components/exchangeStepperForm'
 
 interface VerificationStatusMessages {
   [key: string]: string; // Index signature
@@ -17,31 +17,32 @@ interface VerificationStatusMessages {
 
 const verificationStatusMessages: VerificationStatusMessages = {
   approved: "Your verification was successful. You can access this page.",
-  declined: "Your verification was declined. Please contact support for assistance.",
-  resubmitted: "Your verification requires resubmission. Please check your email for instructions.",
-  expired: "Your verification session has expired. Please start a new verification process.",
+  declined:
+    "Your verification was declined. Please contact support for assistance.",
+  resubmitted:
+    "Your verification requires resubmission. Please check your email for instructions.",
+  expired:
+    "Your verification session has expired. Please start a new verification process.",
 };
-
 
 export default function Page() {
   const router = useRouter();
   const { user, isLoaded, isSignedIn } = useUser();
-  const userId = user?.id || '';
-  const userEmail = user?.emailAddresses[0]?.emailAddress || '';
-  
+  const userId = user?.id || "";
+  const userEmail = user?.emailAddresses[0]?.emailAddress || "";
+
   const [verificationStatus, setVerificationStatus] = useState("");
   const [loading, setLoading] = useState(true);
 
-  
   useEffect(() => {
     if (!user) {
-//      router.push("/sign-in");
+      //      router.push("/sign-in");
       return;
     }
     fetchVerificationStatus(userId)
       .then((status) => {
         setVerificationStatus(status);
-        if(status) setLoading(false);
+        if (status) setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching verification status:", error);
@@ -51,13 +52,16 @@ export default function Page() {
 
   useEffect(() => {
     if (!loading && verificationStatus !== "approved") {
-      const message = verificationStatusMessages[verificationStatus] || "Unknown verification status";
+      const message =
+        verificationStatusMessages[verificationStatus] ||
+        "Unknown verification status";
       router.push(`/verification-error?reason=${encodeURIComponent(message)}`);
-    } 
+    }
   }, [verificationStatus, loading, router]);
 
   if (loading) {
-    return <div className="py-8 lg:py-16 mx-auto max-w-6xl space-y-10 ">
+    return (
+      <div className="py-8 lg:py-16 mx-auto max-w-6xl space-y-10 ">
         <MaxWidthWrapper>
           <header>
             <div className="py-2 px-4">
@@ -74,12 +78,13 @@ export default function Page() {
               </p>
             </div>
           </header>
-        
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <BuySellSkeleton />
-        </main>
+
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <BuySellSkeleton />
+          </main>
         </MaxWidthWrapper>
-    </div>
+      </div>
+    );
   }
 
   return (
@@ -103,16 +108,7 @@ export default function Page() {
           </header>
         </MaxWidthWrapper>
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <iframe
-            id="iframe-widget"
-            src='https://changenow.io/embeds/exchange-widget/v2/widget.html?FAQ=true&amount=0.1&amountFiat=1500&backgroundColor=FFFFFF&darkMode=false&from=btc&fromFiat=aud&horizontal=false&isFiat&lang=en-US&link_id=c11faacdf83834&locales=true&logo=false&primaryColor=2ca4d7&to=eth&toFiat=eth&toTheMoon=true'
-            style={{ height: "356px", width: "100%", border: "none" }}
-          ></iframe>{" "}
-          <script
-            defer
-            type="text/javascript"
-            src='https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js'
-          ></script>
+        <ExchangeWidget />
           {/* Custom Stepper form */}
           {/*<StepperForm userId={userId} userEmail={userEmail} />*/}
         </main>
@@ -120,4 +116,3 @@ export default function Page() {
     </>
   );
 }
-
