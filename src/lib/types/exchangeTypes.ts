@@ -1,14 +1,48 @@
+import { Key } from "react";
+
 // Define the structure for a Currency
 export interface Currency {
-    ticker: string;
-    name: string;
-    image: string;
-    hasExternalId: boolean;
-    isFiat: boolean;
-    featured: boolean;
-    isStable: boolean;
-    supportsFixedRate: boolean;
+  id: string | number | null | undefined;
+  ticker: string;
+  name: string;
+  logo_url: string;
+  // Optional fields from FiatCurrency
+  currency_type?: string;
+  enable?: boolean;
+  has_external_id?: boolean;
+  is_featured?: boolean;
+  is_stable?: boolean;
+  is_available?: boolean;
+  payment_methods?: PaymentMethod[];
+  block_explorer_url_mask?: string | null;
+  default_exchange_value?: number;
+  networks?: Network[];
+  // Optional fields from CryptoCurrency
+  image?: string;
+  hasExternalId?: boolean;
+  isFiat?: boolean;
+  featured?: boolean;
+  isStable?: boolean;
+  supportsFixedRate?: boolean;
+  network?: string;
+  tokenContract?: string;
+  legacyTicker?: string;
+}
+
+  
+  interface PaymentMethod {
+    type: string;
+    deposit_enabled: boolean;
+    withdrawal_enabled: boolean;
   }
+  
+  interface Network {
+    name: string;
+    network: string;
+    block_explorer_url_mask: string | null;
+    payment_methods: PaymentMethod;
+  }
+  
   
   // Define the structure for the minimum exchange amount response
   export interface MinExchangeAmountResponse {

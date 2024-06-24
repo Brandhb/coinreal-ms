@@ -1,10 +1,15 @@
 export async function POST(req: Request) {
     try {
-      const { fromCurrency, toCurrency, address, amount } = await req.json();
-      const response = await fetch('https://api.changenow.io/v1/transactions/XXX', {
+      const apiKey = process.env.CHANGENOW_API_KEY;
+    if (!apiKey) {
+      throw new Error('CHANGENOW_API_KEY is not defined');
+    }
+      const { fromCurrency, toCurrency, address, amount, userId } = await req.json();
+      const response = await fetch('https://api.changenow.io/v2/fiat-transaction', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'x-api-key': apiKey,
         },
         body: JSON.stringify({
           from: fromCurrency,
@@ -12,7 +17,7 @@ export async function POST(req: Request) {
           address: address,
           amount: amount,
           extraId: '',
-          userId: '',
+          userId: userId,
           contactEmail: '',
           refundAddress: '',
           refundExtraId: ''

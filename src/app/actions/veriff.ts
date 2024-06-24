@@ -4,6 +4,7 @@ import axios, { AxiosResponse } from 'axios';
 import { db } from "@/lib/db";
 import { redis } from '@/lib/redis';
 import { extractVerificationData } from "@/lib/utils";
+import { sendEmail } from './sendEmail';
 
 const baseUrl: string | undefined = process.env.NEXT_PUBLIC_VERIFF_BASE_URL;
 const token: string | undefined = process.env.NEXT_PUBLIC_VERIFF_API_KEY;
@@ -50,7 +51,7 @@ export const checkVeriffSession = async (sessionId: string): Promise<any> => {
 };
 
 export const handleVeriffEvent = async (payload: any) => {
-  const { verificationStatus, userId } = extractVerificationData(payload);
+  const { verificationStatus, userId, fullname, reason } = extractVerificationData(payload);
 
   if (!verificationStatus || !userId) {
     throw new Error("Invalid webhook payload");
@@ -58,6 +59,8 @@ export const handleVeriffEvent = async (payload: any) => {
 
   if (verificationStatus) {
     await updateUserVerificationStatus(userId, verificationStatus);
+    // message, name, senderEmail
+    await sendEmail({message: 'message', name: fullname, reason, senderEmail: 'senderEmail'}, 'verification');
   }
 };
 
@@ -94,7 +97,6 @@ const updateUserVerificationStatus = async (userId: string, verificationStatus: 
 
 // Function to fetch user's verification status from the database
 export const fetchVerificationStatus = async (userId: string): Promise<string> => {
-  debugger;
   try {
     // Fetch the user from the database
     const cacheKey = `userId:${userId}`;

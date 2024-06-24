@@ -1,8 +1,8 @@
 import { handleVeriffEvent } from "@/app/actions/veriff";
 
-export async function POST(req: Request) {
+export async function GET(req: Request) {
   try {
-    const payload = req.body;
+    const payload = await req.json()
     await handleVeriffEvent(payload);
     return new Response("Webhook received successfully", { status: 200 });
   } catch (error) {
