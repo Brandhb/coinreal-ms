@@ -8,6 +8,7 @@ import { useMutation } from "@tanstack/react-query";
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import { fetchVerificationStatus } from '@/app/actions/veriff'
 import BuySellSkeleton from "@/app/components/ui/skeleton/BuySell";
+import StepperForm from "@/app/components/exchangeStepperForm";
 
 
 interface VerificationStatusMessages {
@@ -24,20 +25,24 @@ const verificationStatusMessages: VerificationStatusMessages = {
 
 export default function Page() {
   const router = useRouter();
-  const { user } = useUser();
+  const { user, isLoaded, isSignedIn } = useUser();
+  const userId = user?.id || '';
+  const userEmail = user?.emailAddresses[0]?.emailAddress || '';
+  
   const [verificationStatus, setVerificationStatus] = useState("");
   const [loading, setLoading] = useState(true);
 
   
   useEffect(() => {
+    //er;
     if (!user) {
-      router.push("/sign-in");
+//      router.push("/sign-in");
       return;
     }
-    fetchVerificationStatus(user.id)
+    fetchVerificationStatus(userId)
       .then((status) => {
         setVerificationStatus(status);
-        setLoading(false);
+        if(status) setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching verification status:", error);
@@ -101,14 +106,16 @@ export default function Page() {
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <iframe
             id="iframe-widget"
-            src="https://changenow.io/embeds/exchange-widget/v2/widget.html?FAQ=true&amount=0.1&amountFiat=1500&backgroundColor=FFFFFF&darkMode=false&from=btc&fromFiat=aud&horizontal=false&isFiat=true&lang=en-US&link_id=c11faacdf83834&locales=true&logo=false&primaryColor=16b1f3&to=eth&toFiat=btc&toTheMoon=true"
+            src='https://changenow.io/embeds/exchange-widget/v2/widget.html?FAQ=true&amount=0.1&amountFiat=1500&backgroundColor=FFFFFF&darkMode=false&from=btc&fromFiat=aud&horizontal=false&isFiat&lang=en-US&link_id=c11faacdf83834&locales=true&logo=false&primaryColor=2ca4d7&to=eth&toFiat=eth&toTheMoon=true'
             style={{ height: "356px", width: "100%", border: "none" }}
           ></iframe>{" "}
           <script
             defer
             type="text/javascript"
-            src="https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js"
+            src='https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js'
           ></script>
+          {/* Custom Stepper form */}
+          {/*<StepperForm userId={userId} userEmail={userEmail} />*/}
         </main>
       </div>
     </>

@@ -77,5 +77,7 @@ export const validateString = (value: unknown, maxLength: number) => {
 export const extractVerificationData = (payload: any) => {
   const verificationStatus = payload?.verification?.status;
   const userId = payload?.verification?.vendorData; // Assuming vendorData contains user ID
-  return { verificationStatus, userId };
+  const fullname = payload?.verification?.fullname;
+  const reason = payload?.verification?.reason;
+  return { verificationStatus, userId, fullname, reason };
 };

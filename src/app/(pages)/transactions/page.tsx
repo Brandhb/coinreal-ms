@@ -1,5 +1,5 @@
 import { Transaction, columns } from "./columns"
-import { DataTable } from "./data-table"
+
 
 async function getData(): Promise<Transaction[]> {
   // Fetch data from your API here.
@@ -19,7 +19,7 @@ export default async function Page() {
 
   return (
     <div className="container mx-auto py-10">
-      <DataTable columns={columns} data={data} />
+      
     </div>
   )
 }

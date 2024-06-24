@@ -14,15 +14,28 @@ import {
   DropdownMenuTrigger
 } from '@/app/components/ui/shadcn/dropdown-menu'
 
-export type User = {
-  id: string
-  name: string
-  emaiL: string
-  image: string
-  lastSeen: string
+interface Currency {
+  name: string;
+  last: string;
+  buy: string;
+  sell: string;
+  trading_activity: number;
+  typical_hold_time: number;
+  market_cap: string;
+  rank: number;
+  volume: string;
+  circulating_supply: string;
+  all_time_high: string;
+  tradeable: boolean;
+  low: string;
+  high: string;
+  "24h_ago": string;
+  "7d_ago": string;
+  "30d_ago": string;
+  "1y_ago": string;
 }
 
-export const columns: ColumnDef<User>[] = [
+export const columns: ColumnDef<Currency>[] = [
   {
     accessorKey: 'name',
     header: ({ column }) => {
@@ -38,22 +51,29 @@ export const columns: ColumnDef<User>[] = [
     }
   },
   {
-    accessorKey: 'email',
-    header: 'Email'
+    accessorKey: 'last',
+    header: 'Last'
   },
   {
-    accessorKey: 'lastSeen',
-    header: 'Last seen',
+    accessorKey: 'buy',
+    header: 'Buy',
     cell: ({ row }) => {
-      const date = new Date(row.getValue('lastSeen'))
-      const formatted = date.toLocaleDateString()
-      return <div className='font-medium'>{formatted}</div>
+      const buyValue = row.getValue('buy')
+      return <div className='font-medium'>{}</div>
     }
+  },
+  {
+    accessorKey: 'sell',
+    header: 'Sell'
+  },
+  {
+    accessorKey: 'market_cap',
+    header: 'Market Cap'
   },
   {
     id: 'actions',
     cell: ({ row }) => {
-      const user = row.original
+      const currency = row.original
 
       return (
         <DropdownMenu>
@@ -66,7 +86,7 @@ export const columns: ColumnDef<User>[] = [
           <DropdownMenuContent align='end'>
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(user.id)}
+              onClick={() => navigator.clipboard.writeText(currency.name)}
             >
               Copy user ID
             </DropdownMenuItem>

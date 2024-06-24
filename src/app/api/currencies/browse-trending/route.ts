@@ -1,6 +1,6 @@
-export async function POST(req: Request) {
+export async function GET(req: Request) {
     try {
-      const response = await fetch('https://api.changenow.io/v1/currencies?active=true');
+      const response = await fetch('https://digitalsurge.com.au/api/public/broker/ticker/');
       const data = await response.json();
       return new Response(JSON.stringify(data), { status: 200 });
     } catch (error) {

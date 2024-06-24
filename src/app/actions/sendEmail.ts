@@ -1,44 +1,89 @@
-'use server'
-import { z } from 'zod'
-import { ContactFormSchema } from "@/validators";
-import ContactUsEmail, { ContactUsEmailtoSupport } from "@/emails";
-import { validateString } from "@/lib/utils";
+import { z } from "zod";
 import { Resend } from "resend";
+import {
+  ContactUsEmail,
+  VerificationEmail,
+  ContactUsEmailtoSupport,
+} from "@/emails";
+import { ContactFormSchema, EmailFormScheme, VerrifFormSchema } from "@/validators";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-type Inputs = z.infer<typeof ContactFormSchema>
-const supprotEmailAddress = "support@ways2coin.com"
-export const sendEmail = async (data: Inputs) => {
-  const result = ContactFormSchema.safeParse(data)
-    if (result.success) {
-      const { name, senderEmail, message } = result.data
-      try {
-        const emailData = await resend.emails.send({
-          from: 'Acme <onboarding@resend.dev>',
-          to: [supprotEmailAddress],
-          subject: 'Ways2Coin - Contact form submission',
-          text: `Name: ${name}\nEmail: ${senderEmail}\nMessage: ${message}`,
-          react: ContactUsEmailtoSupport({ name, senderEmail, message })
-        })
-        
-        if(emailData.error) throw Error(emailData.error.message)
-          //Send confirmation email to the client email 
-          const clientEmailData = await resend.emails.send({
-            from: 'Acme <onboarding@resend.dev>',
-            to: [senderEmail],
-            subject: 'Ways2Coin - Contact form submission',
-            text: `Name: ${name}\nEmail: ${senderEmail}\nMessage: ${message}`,
-            react: ContactUsEmail({ name, senderEmail, message })
-          })
-          if(clientEmailData.error)  throw Error(clientEmailData.error.message)
-        return { success: true, emailData }        
-      } catch (error) {
-        console.log("Failed to send email: ", error)
-        return { success: false, error }
-      }
+const supportEmailAddress = "support@ways2coin.com";
+
+type ContactFormInputs = z.infer<typeof ContactFormSchema>;
+type VerificationFormInputs = z.infer<typeof VerrifFormSchema>;
+type EmailFormInput = z.infer<typeof EmailFormScheme>
+type EmailType = "contactUs" | "contactUsSupport" | "verification";
+
+const emailComponents = {
+  contactUs: ContactUsEmail,
+  contactUsSupport: ContactUsEmailtoSupport,
+  verification: VerificationEmail,
+};
+
+export const sendEmail = async (
+  data: EmailFormInput,
+  emailType: EmailType
+) => {
+  let result;
+  if (emailType === "verification") {
+    result = VerrifFormSchema.safeParse(data);
+  } else {
+    result = ContactFormSchema.safeParse(data);
+  }
+
+  if (!result.success) {
+    return { success: false, error: result.error.format() };
+  }
+
+  const { name, senderEmail, message } = result.data;
+  const reactComponent = emailComponents[emailType]({
+    name,
+    senderEmail,
+    reason: emailType === "verification" ? data.reason : undefined,
+    message,
+  });
+
+  try {
+    const emailToSupport = await resend.emails.send({
+      from: "Acme <onboarding@resend.dev>",
+      to: [supportEmailAddress],
+      subject: getEmailSubject(emailType),
+      text: `Name: ${name}\nEmail: ${senderEmail}\nMessage: ${message}`,
+      react: reactComponent,
+    });
+
+    if (emailToSupport.error) {
+      throw new Error(`Failed to send email to support: ${emailToSupport.error.message}`);
     }
-  
-    if (result.error) {
-      return { success: false, error: result.error.format() }
+
+    const emailToClient = await resend.emails.send({
+      from: "Acme <onboarding@resend.dev>",
+      to: [senderEmail],
+      subject: getEmailSubject(emailType),
+      text: `Name: ${name}\nEmail: ${senderEmail}\nMessage: ${message}`,
+      react: reactComponent,
+    });
+
+    if (emailToClient.error) {
+      throw new Error(`Failed to send confirmation email to client: ${emailToClient.error.message}`);
     }
+
+    return { success: true, emailData: { emailToSupport, emailToClient } };
+  } catch (error) {
+    console.error("Failed to send email: ", error);
+    return { success: false, error: error };
+  }
+};
+
+const getEmailSubject = (emailType: EmailType): string => {
+  switch (emailType) {
+    case "contactUs":
+    case "contactUsSupport":
+      return "Ways2Coin - Contact form submission";
+    case "verification":
+      return "Ways2Coin - Verification Required";
+    default:
+      throw new Error("Invalid email type");
+  }
 };
