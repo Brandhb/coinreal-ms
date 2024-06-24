@@ -35,7 +35,7 @@ export default function Page() {
   
   useEffect(() => {
     if (!user) {
-      router.push("/sign-in");
+//      router.push("/sign-in");
       return;
     }
     fetchVerificationStatus(userId)
@@ -47,7 +47,7 @@ export default function Page() {
         console.error("Error fetching verification status:", error);
         setLoading(false);
       });
-  }, [user, userId, router]);
+  }, [user, userId]);
 
   useEffect(() => {
     if (!loading && verificationStatus !== "approved") {
