@@ -48,7 +48,7 @@ export default function Page() {
         console.error("Error fetching verification status:", error);
         setLoading(false);
       });
-  }, [user, router]);
+  }, [user, userId]);
 
   useEffect(() => {
     if (!loading && verificationStatus !== "approved") {

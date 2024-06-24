@@ -27,7 +27,6 @@ interface Currency {
 }
 
 const CurrencyListPage = () => {
-  //const data = await getCurrenciesFromDS();
   const [currencies, setCurrencies] = useState<Currency[]>([]);
 
   useEffect(() => {

@@ -42,7 +42,7 @@ const ContactFrom = () => {
     console.log('formData: ', formData)
     try {
       setLoading(true);
-      await sendEmail(formData);
+      await sendEmail(formData, 'contactUs');
       // Reset form after successful submission if needed
       form.reset();
       setLoading(false);
