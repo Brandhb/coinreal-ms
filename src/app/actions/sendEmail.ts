@@ -22,7 +22,7 @@ const emailComponents = {
 };
 
 export const sendEmail = async (
-  data: EmailFormInput,
+  data: ContactFormInputs,
   emailType: EmailType
 ) => {
   let result;
@@ -40,7 +40,7 @@ export const sendEmail = async (
   const reactComponent = emailComponents[emailType]({
     name,
     senderEmail,
-    reason: emailType === "verification" ? data.reason : undefined,
+    reason: emailType === "verification" ? 'data.reason' : undefined,
     message,
   });
 
