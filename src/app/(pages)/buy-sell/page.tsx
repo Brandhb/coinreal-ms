@@ -9,7 +9,7 @@ import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import { fetchVerificationStatus } from "@/app/actions/veriff";
 import BuySellSkeleton from "@/app/components/ui/skeleton/BuySell";
 import StepperForm from "@/app/components/exchangeStepperForm";
-import ExchangeWidget from '@/app/components/exchangeStepperForm'
+import ExchangeWidget from '@/app/components/exchangeWidget'
 
 interface VerificationStatusMessages {
   [key: string]: string; // Index signature
