@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Perk from "./components/ui/Perk";
-import VeriffComponent from "./components/ui/Veriff";
 import { HowItWorks } from "./components/mainPage/HowItWorks";
 import Testimonials from "./components/testimonials";
 
