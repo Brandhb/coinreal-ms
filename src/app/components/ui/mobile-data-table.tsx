@@ -88,9 +88,9 @@ export const MobileFriendlyTable: React.FC<MobileFriendlyTableProps> = ({ data, 
                       <Button variant="outline" size="sm">Actions</Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className='mx-4'>
-                      <DropdownMenuItem onClick={() => alert(`Buying ${currency.name}`)}>Buy</DropdownMenuItem>
-                      <DropdownMenuItem onClick={() => alert(`Selling ${currency.name}`)}>Sell</DropdownMenuItem>
-                      <DropdownMenuItem onClick={() => toggleHistory(currency.token || '')}>
+                      <DropdownMenuItem>Buy</DropdownMenuItem>
+                      <DropdownMenuItem>Sell</DropdownMenuItem>
+                      <DropdownMenuItem>
                         {historyVisible[currency.token] ? 'Hide History' : 'Watch History'}
                       </DropdownMenuItem>
                     </DropdownMenuContent>
