@@ -1,5 +1,10 @@
-// lib/actions.ts
+'use server'
 import axios from "axios";
+import getConfig from "next/config";
+
+const { publicRuntimeConfig } = getConfig();
+
+const baseURL = publicRuntimeConfig.baseURL;
 
 interface CreateTransactionData {
   from_amount: number;
@@ -22,18 +27,18 @@ interface CreateTransactionData {
 }
 
 export const getCurrencies = async () => {
-  const response = await axios.get("/api/currencies/available-currencies");
+  const response = await axios.get(`${baseURL}/api/currencies/available-currencies`);
   return response.data;
 };
 
 export const getFiatCurrencies = async () => {
   //debugger;
-  const response = await axios.get("/api/currencies/fiat-currencies");
+  const response = await axios.get(`${baseURL}/api/currencies/fiat-currencies`);
   return response.data;
 };
 
 export const getMinExchangeAmount = async (from: string, to: string) => {
-  const response = await axios.get("/api/currencies/min-exchange-amount", {
+  const response = await axios.get(`${baseURL}/api/currencies/min-exchange-amount`, {
     params: { from, to },
   });
   return response.data;
@@ -44,7 +49,7 @@ export const getEstimatedAmount = async (
   from: string,
   to: string
 ) => {
-  const response = await axios.get("/api/currencies/estimate-amount", {
+  const response = await axios.get(`${baseURL}/api/currencies/estimate-amount`, {
     params: { amount, from, to },
   });
   return response.data;
@@ -58,7 +63,7 @@ export const createTransaction = async (
   userId: string,
   userEmail: string,
 ) => {
-  const response = await axios.post("/api/currencies/create-transaction", {
+  const response = await axios.post(`${baseURL}/api/currencies/create-transaction`, {
     from,
     to,
     address,
@@ -71,14 +76,14 @@ export const createTransaction = async (
 export const createFiatTransaction = async (
   data: CreateTransactionData
 ) => {
-  const response = await axios.post("/api/currencies/fiat-create-transaction", {
+  const response = await axios.post(`${baseURL}/api/currencies/fiat-create-transaction`, {
     data,
   });
   return response.data;
 };
 
 export const getTransactionStatus = async (transactionId: string) => {
-  const response = await axios.get("/api/currencies/transaction-status", {
+  const response = await axios.get(`${baseURL}/api/currencies/transaction-status`, {
     params: { transactionId },
   });
   return response.data;

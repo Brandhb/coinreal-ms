@@ -2,19 +2,15 @@
 
 import { ColumnDef } from '@tanstack/react-table'
 
-import { MoreHorizontal, ArrowUpDown } from 'lucide-react'
+import { ArrowUpDown } from 'lucide-react'
 
 import { Button } from '@/app/components/ui/shadcn/button'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from '@/app/components/ui/shadcn/dropdown-menu'
+import { formatPrice } from '@/lib/utils'
+import { CurrencyFromDS } from '@/lib/types/exchangeTypes'
+import ActionComponent from './ActionComponent'
 
 interface Currency {
+  token: string
   name: string;
   last: string;
   buy: string;
@@ -35,67 +31,76 @@ interface Currency {
   "1y_ago": string;
 }
 
-export const columns: ColumnDef<Currency>[] = [
+
+export const columns: ColumnDef<CurrencyFromDS>[] = [
   {
     accessorKey: 'name',
-    header: ({ column }) => {
+    header: ({ column }) => (
+      <Button
+        variant='ghost'
+        onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+      >
+        Cryptocurrencies
+        <ArrowUpDown className='ml-2 h-4 w-4' />
+      </Button>
+    ),
+    cell: ({ row }) => {
+      const currency = row.original;
       return (
-        <Button
-          variant='ghost'
-          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-        >
-          Name
-          <ArrowUpDown className='ml-2 h-4 w-4' />
-        </Button>
-      )
+        <div className='font-medium'>
+          {currency.name} ({currency.token})
+        </div>
+      );
     }
   },
   {
     accessorKey: 'last',
-    header: 'Last'
+    header: 'Last',
+    cell: ({ row }) => {
+      const lastValue: string = row.getValue('last')
+      const formatterPrice = formatPrice(lastValue) 
+      return <div className='font-medium'>{formatterPrice}</div>
+    }
   },
   {
     accessorKey: 'buy',
     header: 'Buy',
     cell: ({ row }) => {
-      const buyValue = row.getValue('buy')
-      return <div className='font-medium'>{}</div>
+      const buyValue: string = row.getValue('buy')
+      const formatterPrice = formatPrice(buyValue) 
+      return <div className='font-medium'>{formatterPrice}</div>
     }
   },
   {
     accessorKey: 'sell',
-    header: 'Sell'
+    header: 'Sell',
+    cell: ({ row }) => {
+      const sellValue: string = row.getValue('sell')
+      const formatterPrice = formatPrice(sellValue) 
+      return <div className='font-medium'>{formatterPrice}</div>
+    }
   },
   {
     accessorKey: 'market_cap',
-    header: 'Market Cap'
+    header: 'Market Cap',
+    cell: ({ row }) => {
+      const marketCapValue: string = row.getValue('market_cap')
+      const formatterPrice = formatPrice(marketCapValue) 
+      return <div className='font-medium'>{formatterPrice}</div>
+    }
   },
   {
     id: 'actions',
+    header: 'Actions',
     cell: ({ row }) => {
-      const currency = row.original
+      const currency = row.original;
+
 
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant='ghost' className='h-8 w-8 p-0'>
-              <span className='sr-only'>Open menu</span>
-              <MoreHorizontal className='h-4 w-4' />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align='end'>
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(currency.name)}
-            >
-              Copy user ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      )
+        <>
+          <ActionComponent currency={currency} />
+        </>
+      );
     }
   }
 ]

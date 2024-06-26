@@ -58,40 +58,35 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <>
+    <div className='p-4 md:p-6'>
       {/* Filters */}
-
-      <div className='flex items-center justify-between'>
-        <div className='flex items-center py-4'>
-          <Input
-            placeholder='Search by name...'
-            value={(table.getColumn('name')?.getFilterValue() as string) ?? ''}
-            onChange={event =>
-              table.getColumn('name')?.setFilterValue(event.target.value)
-            }
-            className='max-w-sm'
-          />
-        </div>
+      <div className='flex flex-col md:flex-row items-center justify-between py-4'>
+        <Input
+          placeholder='Search by name...'
+          value={(table.getColumn('name')?.getFilterValue() as string) ?? ''}
+          onChange={event =>
+            table.getColumn('name')?.setFilterValue(event.target.value)
+          }
+          className='w-full md:max-w-sm mb-2 md:mb-0'
+        />
       </div>
 
       {/* Table */}
-      <div className='rounded-md border'>
-        <Table>
+      <div className='rounded-md border overflow-x-auto'>
+        <Table className='min-w-full'>
           <TableHeader>
             {table.getHeaderGroups().map(headerGroup => (
               <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map(header => {
-                  return (
-                    <TableHead key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </TableHead>
-                  )
-                })}
+                {headerGroup.headers.map(header => (
+                  <TableHead key={header.id}>
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
+                  </TableHead>
+                ))}
               </TableRow>
             ))}
           </TableHeader>
@@ -127,7 +122,7 @@ export function DataTable<TData, TValue>({
       </div>
 
       {/* Pagination */}
-      <div className='flex items-center justify-end space-x-2 py-4'>
+      <div className='flex flex-col md:flex-row items-center justify-end space-y-2 md:space-y-0 md:space-x-2 py-4'>
         <Button
           variant='outline'
           size='sm'
@@ -145,6 +140,6 @@ export function DataTable<TData, TValue>({
           Next
         </Button>
       </div>
-    </>
+    </div>
   )
 }
