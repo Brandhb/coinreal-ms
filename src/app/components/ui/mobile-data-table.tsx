@@ -90,7 +90,7 @@ export const MobileFriendlyTable: React.FC<MobileFriendlyTableProps> = ({ data, 
                     <DropdownMenuContent align="end" className='mx-4'>
                       <DropdownMenuItem>Buy</DropdownMenuItem>
                       <DropdownMenuItem>Sell</DropdownMenuItem>
-                      <DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => toggleHistory(currency.token || '')}>
                         {historyVisible[currency.token] ? 'Hide History' : 'Watch History'}
                       </DropdownMenuItem>
                     </DropdownMenuContent>
