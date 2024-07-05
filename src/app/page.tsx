@@ -120,9 +120,7 @@ export default function Home() {
               ))}
             </div>
             {/* How It Works Section */}
-            <div className="block md:hidden">
               <AssetList cryptocurrencies={currencies || []} />
-            </div>
 
             {/* How It Works Section */}
             <HowItWorks />

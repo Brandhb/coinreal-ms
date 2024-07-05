@@ -15,6 +15,7 @@ const AssetCard: React.FC<AssetCardProps> = ({ id, symbol, name, image, price_ch
       <Image src={image} width={10} height={10} alt={name} className="w-16 h-16 mx-auto mb-4" />
       <div className="text-center">
         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{name}</h5>
+      <h3 className='mb-4 text-lg tracking-tight text-gray-700 dark:text-white uppercase'>{symbol}</h3>
         <p className={`mb-3 font-normal ${price_change_24h >= 0 ? 'text-green-500' : 'text-red-500'} dark:text-gray-400`}>
           {price_change_24h >= 0 ? '+' : ''}{price_change_24h.toFixed(2)}%
         </p>
