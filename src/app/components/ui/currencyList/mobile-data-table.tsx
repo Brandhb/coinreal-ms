@@ -4,7 +4,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { CurrencyFromDS } from '@/lib/types/exchangeTypes'
 import { formatPrice } from '@/lib/utils'
 import { ChevronDown, ChevronRight, Search } from 'lucide-react' // Assuming you have imported Search from lucide-react
-import { Skeleton } from './shadcn/skeleton'
+import { Skeleton } from '../shadcn/skeleton'
 
 
 interface MobileFriendlyTableProps {

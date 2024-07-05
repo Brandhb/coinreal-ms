@@ -60,7 +60,7 @@ export const handleVeriffEvent = async (payload: any) => {
   if (verificationStatus) {
     await updateUserVerificationStatus(userId, verificationStatus);
     // message, name, senderEmail
-    //await sendEmail({message: 'message', name: fullname, reason, senderEmail: 'senderEmail'}, 'verification');
+    await sendEmail({message: 'message', name: fullname, reason, senderEmail: 'senderEmail'}, 'verification');
   }
 };
 

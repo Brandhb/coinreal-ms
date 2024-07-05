@@ -1,14 +1,15 @@
 "use client";
 import useSWR from "swr";
 import { getCurrenciesFromDS } from "@/app/actions/currencies";
-import { DataTable } from "@/app/components/ui/data-table";
+import { DataTable } from "@/app/components/ui/currencyList/data-table";
 import { columns } from "./columns";
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
-import { MobileFriendlyTable } from "@/app/components/ui/mobile-data-table";
+import { MobileFriendlyTable } from "@/app/components/ui/currencyList/mobile-data-table";
 
 const CurrencyListPage = () => {
-  const { data: currencies, isLoading, error } = useSWR("currencies", getCurrenciesFromDS);
-
+  const { data: currencies, isLoading, error } = useSWR("currencies", getCurrenciesFromDS, {
+    refreshInterval: 5000, // Polling interval in milliseconds (e.g., every 5 seconds)
+  });
   if (error) return <div>Error fetching data</div>;
 
   return (

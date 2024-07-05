@@ -9,28 +9,6 @@ import { formatPrice } from '@/lib/utils'
 import { CurrencyFromDS } from '@/lib/types/exchangeTypes'
 import ActionComponent from './ActionComponent'
 
-interface Currency {
-  token: string
-  name: string;
-  last: string;
-  buy: string;
-  sell: string;
-  trading_activity: number;
-  typical_hold_time: number;
-  market_cap: string;
-  rank: number;
-  volume: string;
-  circulating_supply: string;
-  all_time_high: string;
-  tradeable: boolean;
-  low: string;
-  high: string;
-  "24h_ago": string;
-  "7d_ago": string;
-  "30d_ago": string;
-  "1y_ago": string;
-}
-
 
 export const columns: ColumnDef<CurrencyFromDS>[] = [
   {

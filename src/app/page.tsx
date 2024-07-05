@@ -1,17 +1,17 @@
+"use client";
+import useSWR from "swr";
+import { getAssetsFromCG, getCurrenciesFromDS } from "@/app/actions/currencies";
+import { columns } from "@/app/(pages)/currency-list/columns";
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import { Button, buttonVariants } from "@/app/components/ui/Button";
-import {
-  ArrowDownToLine,
-  CheckCircle,
-  Leaf,
-  ArrowLeftRight,
-  LineChart,
-  DollarSign,
-} from "lucide-react";
+import { Leaf, ArrowLeftRight, DollarSign } from "lucide-react";
 import Link from "next/link";
 import Perk from "./components/ui/Perk";
 import { HowItWorks } from "./components/mainPage/HowItWorks";
 import Testimonials from "./components/testimonials";
+import { MobileFriendlyTable } from "./components/ui/currencyList/mobile-data-table";
+import { DataTable } from "./components/ui/currencyList/data-table";
+import AssetList from "./components/assetCardList";
 
 const perks = [
   {
@@ -35,6 +35,14 @@ const perks = [
 ];
 
 export default function Home() {
+  const {
+    data: currencies,
+    isLoading,
+    error,
+  } = useSWR("currencies", getAssetsFromCG, {
+    refreshInterval: 5000, // Polling interval in milliseconds (e.g., every 5 seconds)
+  });
+
   return (
     <>
       <MaxWidthWrapper>
@@ -87,7 +95,7 @@ export default function Home() {
           ></path>
         </svg>
         <section className="bg-gray-50 border-gray-50 border-2">
-          <MaxWidthWrapper className="lg:pt-0 lg:mt-[-200px] pb-24 md:py-10 sm:py-10 space-y-16 lg:space-y-32">
+          <MaxWidthWrapper className="lg:pt-0 lg:mt-[-150px] pb-24 md:py-10 sm:py-10 space-y-16 lg:space-y-32">
             {/* perks section */}
             <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl space-y-4">
               <h1 className="text-3xl px-4 font-bold tracking-tight text-gray-900 sm:text-3xl leading-24">
@@ -100,7 +108,7 @@ export default function Home() {
 
             <div
               className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0"
-              style={{ marginTop: "0px" }}
+              style={{ marginTop: "30px" }}
             >
               {perks.map((perk) => (
                 <Perk
@@ -111,65 +119,15 @@ export default function Home() {
                 />
               ))}
             </div>
-            {/* Features section
-            <section className="py-20">
-              <div className="container mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  
-                  <div className="border p-6 rounded-lg">
-                    <h2 className="text-xl font-semibold mb-4">
-                      Secure & Easy Transactions
-                    </h2>
-                    <p>
-                      Our platform offers secure and easy transactions for
-                      buying, selling, and trading cryptocurrencies.
-                    </p>
-                  </div>
-                  
-                  <div className="border p-6 rounded-lg">
-                    <h2 className="text-xl font-semibold mb-4">
-                      Fiat Currency Support
-                    </h2>
-                    <p>
-                      Trade crypto with ease using fiat currencies. We support
-                      multiple fiat currencies for your convenience.
-                    </p>
-                  </div>
-             
-                  <div className="border p-6 rounded-lg">
-                    <h2 className="text-xl font-semibold mb-4">
-                      Real-time Market Data
-                    </h2>
-                    <p>
-                      Stay informed with real-time market data, charts, and
-                      analysis to make informed trading decisions.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section> 
-            */}
+            {/* How It Works Section */}
+            <div className="block md:hidden">
+              <AssetList cryptocurrencies={currencies || []} />
+            </div>
 
-            {/* How It Works Section 
-            <section className="bg-gray-100 py-20">
-              <div className="container mx-auto">
-                <h2 className="text-3xl font-semibold mb-8 text-center">
-                  How It Works
-                </h2>
-
-              </div>
-            </section>*/}
+            {/* How It Works Section */}
             <HowItWorks />
 
-            {/* Testimonials Section 
-            <section className="py-20">
-              <div className="container mx-auto">
-                <h2 className="text-3xl font-semibold mb-8 text-center">
-                  What Our Customers Say
-                </h2>
-                
-              </div>
-            </section>*/}
+            {/* Testimonials Section*/}
             <Testimonials />
           </MaxWidthWrapper>
         </section>

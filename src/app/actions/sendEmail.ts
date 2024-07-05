@@ -23,7 +23,7 @@ const emailComponents = {
 };
 
 export const sendEmail = async (
-  data: ContactFormInputs,
+  data: ContactFormInputs | VerificationFormInputs,
   emailType: EmailType
 ) => {
   let result;

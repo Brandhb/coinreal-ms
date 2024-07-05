@@ -47,6 +47,70 @@ export interface Currency {
   tokenContract?: string;
   legacyTicker?: string;
 }
+export interface AssetFromDS {
+  code: string;
+  name: string;
+  tradeable: boolean;
+  decimal_places: number;
+  min_amount: string;
+  step_size: string;
+  min_withdrawal_amount: string;
+  withdrawal_step_size: string;
+  withdrawal_fee: string;
+  withdrawals_enabled: boolean;
+  deposits_enabled: boolean;
+  withdrawal_note: string;
+  deposit_note: string;
+  min_confirmations: number;
+  default_network: string;
+  default_network_name: string;
+  rank: number;
+  color: string;
+  description: string;
+  website: string;
+  image: string;
+  stakeable: boolean;
+  rtcompat: boolean;
+  swaps_enabled: boolean;
+  swap_rate_offset: string;
+  triggers_enabled: boolean;
+  recurring_enabled: boolean;
+  max_order_size_value: string;
+  delisted: boolean;
+}
+
+export interface CryptocurrencyFromCG {
+  id: string;
+  symbol: string;
+  name: string;
+  image: string;
+  current_price: number;
+  market_cap: number;
+  market_cap_rank: number;
+  fully_diluted_valuation: number;
+  total_volume: number;
+  high_24h: number;
+  low_24h: number;
+  price_change_24h: number;
+  price_change_percentage_24h: number;
+  market_cap_change_24h: number;
+  market_cap_change_percentage_24h: number;
+  circulating_supply: number;
+  total_supply: number;
+  max_supply: number;
+  ath: number;
+  ath_change_percentage: number;
+  ath_date: string;
+  atl: number;
+  atl_change_percentage: number;
+  atl_date: string;
+  roi: null | {
+    times: number;
+    currency: string;
+    percentage: number;
+  };
+  last_updated: string;
+}
 
 interface PaymentMethod {
   type: string;
