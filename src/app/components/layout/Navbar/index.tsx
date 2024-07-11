@@ -1,6 +1,5 @@
 "use client";
 import {
-  RedirectToSignIn,
   SignInButton,
   SignOutButton,
   SignedIn,
@@ -8,12 +7,9 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import { FC, useEffect, useState } from "react";
-import { ConnectButton } from "thirdweb/react";
-import client from "@/lib/client";
-import { NETWORK } from "@/const/contracts";
-import toast from "react-hot-toast";
-import toastStyle from "@/utils/toastConfig";
+import { FC, useState } from "react";
+import Image from "next/image";
+import NavBarLogo from "@/app/components/ui/NavBarLogo";
 
 const Navbar: FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,36 +17,32 @@ const Navbar: FC = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-  useEffect(() => {
-    {
-      /*toast.loading("Approving...", {
-      id: "approve",
-      style: toastStyle,
-      position: "bottom-center",
-    });
-    toast("Approval successful.", {
-      icon: "👍",
-      id: "approve",
-      style: toastStyle,
-      position: "bottom-center",
-    });*/
-    }
-  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur bg-opacity-30 py-4">
-      <div className="max-w-7xl mx-auto px-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur bg-opacity-30 lg:py-4">
+      <div className="max-w-7xl mx-auto pr-2 lg:px-4">
         <div className="flex justify-between items-center py-4">
           {/* Left Section: Logo */}
           <div className="flex-shrink-0">
+            {/*
             <a href="/" className="text-xl font-bold text-gray-700">
               Ways2Coin
             </a>
-            {/*<ConnectButton
-              theme="dark"
-              client={client}
-              chain={NETWORK}
-  />*/}
+            />*/}
+
+            <a
+              href="/"
+              className="block w-36 h-12 sm:w-36 sm:h-12 md:w-48 md:h-20 lg:w-48 lg:h-20"
+            >
+              <Image
+                alt="navbar-logo"
+                src="/navbar-logo.svg"
+                layout="responsive"
+                width={180}
+                height={200}
+                className="object-cover"
+              />
+            </a>
           </div>
 
           {/* Middle Section: Route Links (Hidden on Mobile) */}
@@ -77,7 +69,7 @@ const Navbar: FC = () => {
             <SignedOut>
               <a
                 href="sign-up"
-                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded-md"
                 onClick={() => redirect("/sign-up")}
               >
                 Get Started
@@ -85,7 +77,7 @@ const Navbar: FC = () => {
               <SignInButton>
                 <a
                   href="/sign-in"
-                  className="text-gray-700 underline hover:text-gray-500"
+                  className="text-gray-700 underline hover:text-gray-500 px-0"
                 >
                   Sign-in
                 </a>

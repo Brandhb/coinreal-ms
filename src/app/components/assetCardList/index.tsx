@@ -19,6 +19,7 @@ const AssetList: React.FC<AssetListProps> = ({ cryptocurrencies }) => {
             name={crypto.name}
             image={crypto.image}
             price_change_24h={crypto.price_change_percentage_24h}
+            currentPrice={crypto.current_price}
           />
         ))}
         <div className="flex-shrink-0 max-w-sm min-w-[150px] p-6 border border-gray-200 rounded-lg shadow flex flex-col justify-between bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white">

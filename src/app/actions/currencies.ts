@@ -35,3 +35,21 @@ export const getAssetsFromCG = async () => {
     throw error; // Rethrow the error so it can be caught by the caller
   }
 };
+
+export const getAssetByIdFromCG = async (id: string) => {
+  try {
+    const baseURL = publicRuntimeConfig.baseURL;
+    const response = await axios.get<CryptocurrencyFromCG[]>(`${baseURL}/api/currencies/crypto-asset-by-id`, {
+      params: {
+        id,
+      },
+    });
+
+    // Extract only the first 5 items from the response data
+    const data: CryptocurrencyFromCG = response.data[0];
+    return data;
+  } catch (error) {
+    console.error("Error fetching cryptocurrencies:", error);
+    throw error; // Rethrow the error so it can be caught by the caller
+  }
+};

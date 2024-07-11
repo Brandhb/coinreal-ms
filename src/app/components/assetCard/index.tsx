@@ -1,5 +1,6 @@
-import Image from 'next/image';
-import React from 'react';
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import React from "react";
 
 interface AssetCardProps {
   id: string;
@@ -7,26 +8,72 @@ interface AssetCardProps {
   name: string;
   image: string;
   price_change_24h: number;
+  currentPrice: number;
+  // Define dynamic Tailwind classes as props
+  cardClassName?: string; // Example: "max-w-sm min-w-[150px] p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+  imageClassName?: string; // Example: "w-16 h-16 mx-auto mb-4"
+  titleClassName?: string; // Example: "mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"
+  subtitleClassName?: string; // Example: "mb-4 text-lg tracking-tight text-gray-700 dark:text-white uppercase"
+  priceChangeClassName?: string; // Example: "mb-3 font-normal"
+  currentPriceClassName?: string;
+  linkClassName?: string; // Example: "inline-flex items-center text-blue-600 hover:underline"
 }
 
-const AssetCard: React.FC<AssetCardProps> = ({ id, symbol, name, image, price_change_24h }) => {
+const AssetCard: React.FC<AssetCardProps> = ({
+  id,
+  symbol,
+  name,
+  image,
+  price_change_24h,
+  currentPrice,
+  cardClassName,
+  imageClassName,
+  titleClassName,
+  subtitleClassName,
+  priceChangeClassName,
+  currentPriceClassName,
+  linkClassName,
+}) => {
   return (
-    <div className="max-w-sm min-w-[150px] p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-      <Image src={image} width={10} height={10} alt={name} className="w-16 h-16 mx-auto mb-4" />
+    <div
+      className={cn(
+        "max-w-sm min-w-[150px] p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700",
+        cardClassName
+      )}
+    >
+      <Image
+        src={image}
+        width={64}
+        height={64}
+        alt={name}
+        className={cn("w-16 h-16 mx-auto mb-4", imageClassName)}
+      />
+
       <div className="text-center">
-        <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{name}</h5>
-      <h3 className='mb-4 text-lg tracking-tight text-gray-700 dark:text-white uppercase'>{symbol}</h3>
-        <p className={`mb-3 font-normal ${price_change_24h >= 0 ? 'text-green-500' : 'text-red-500'} dark:text-gray-400`}>
-          {price_change_24h >= 0 ? '+' : ''}{price_change_24h.toFixed(2)}%
+        <h5 className={cn("mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white", titleClassName)}>{name}</h5>
+        <h3 className={cn("mb-4 text-lg tracking-tight text-gray-700 dark:text-white uppercase", subtitleClassName)}>{symbol}</h3>
+
+        {/* Current Price in AUD */}
+        <p
+          className={cn("text-lg font-bold text-gray-900 dark:text-white", currentPriceClassName)}
+        >
+          A
+          {currentPrice.toLocaleString("en-AU", {
+            style: "currency",
+            currency: "AUD",
+          })}
         </p>
-        <div className="flex justify-center">
-          <a href={`https://coingecko.com/en/coins/${id}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:underline">
-            See more
-            <svg className="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
-            </svg>
-          </a>
-        </div>
+
+        {/* Price Change */}
+        <p
+          className={`${priceChangeClassName} ${
+            price_change_24h >= 0 ? "text-green-500" : "text-red-500"
+          } dark:text-gray-400`}
+        >
+          {price_change_24h >= 0
+            ? `+${price_change_24h.toFixed(2)}%`
+            : `${price_change_24h.toFixed(2)}%`}
+        </p>
       </div>
     </div>
   );

@@ -48,7 +48,7 @@ export default function Home() {
       <MaxWidthWrapper>
         {/* HeroSection */}
         <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl space-y-10">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl leading-24">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl px-4 leading-24">
             Safely Buy, Sell, and{" "}
             <span className="text-blue-600">Trade Cryptocurrencies</span>.
           </h1>
@@ -95,7 +95,7 @@ export default function Home() {
           ></path>
         </svg>
         <section className="bg-gray-50 border-gray-50 border-2">
-          <MaxWidthWrapper className="lg:pt-0 lg:mt-[-150px] pb-24 md:py-10 sm:py-10 space-y-16 lg:space-y-32">
+          <MaxWidthWrapper className="lg:pt-0 lg:mt-[-150px] pb-24 md:py-10 sm:py-10 px-10 space-y-16 lg:space-y-32">
             {/* perks section */}
             <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl space-y-4">
               <h1 className="text-3xl px-4 font-bold tracking-tight text-gray-900 sm:text-3xl leading-24">
