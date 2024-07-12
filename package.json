@@ -41,6 +41,7 @@
     "next-auth": "^4.24.7",
     "next-iron-session": "^4.2.0",
     "next-themes": "^0.3.0",
+    "nextjs-google-analytics": "^2.3.3",
     "pg": "^8.11.5",
     "radix-ui": "^1.0.1",
     "raw-body": "^2.5.2",
