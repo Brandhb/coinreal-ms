@@ -35,7 +35,7 @@ export default function RootLayout({
         <main className="relative flex flex-col min-h-screen bg-gradient-to-r from-fuchsia-500 to-cyan-500">
           <Providers>
             <Navbar />
-            <GoogleAnalytics trackPageViews />
+            {/*<GoogleAnalytics trackPageViews />*/}
             <div className="flex-grow flex-1 py-20">{children}</div>
             <InformationalBanner />
             <Footer />
