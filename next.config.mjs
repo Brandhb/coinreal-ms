@@ -2,7 +2,7 @@
 const nextConfig = {
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL || "http://localhost:3000",
-    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID,
+    googleAnalyticsId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
     
   },
   webpack: config => {

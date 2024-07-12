@@ -9,7 +9,7 @@ import "./globals.css";
 //import { Toaster } from "@/app/components/ui/shadcn/sonner";
 import Providers from "@/app/components/Providers";
 import { InformationalBanner } from "@/app/components/ui/InformationalBanner";
-import { GoogleAnalytics } from 'nextjs-google-analytics';
+import GoogleAnalytics from '@/app/components/GoogleAnalytics';
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -35,7 +35,7 @@ export default function RootLayout({
         <main className="relative flex flex-col min-h-screen bg-gradient-to-r from-fuchsia-500 to-cyan-500">
           <Providers>
             <Navbar />
-            {/*<GoogleAnalytics trackPageViews />*/}
+            <GoogleAnalytics />
             <div className="flex-grow flex-1 py-20">{children}</div>
             <InformationalBanner />
             <Footer />
