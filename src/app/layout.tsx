@@ -36,7 +36,6 @@ export default function RootLayout({
           <Providers>
             <Navbar />
             <GoogleAnalytics trackPageViews />
-
             <div className="flex-grow flex-1 py-20">{children}</div>
             <InformationalBanner />
             <Footer />
