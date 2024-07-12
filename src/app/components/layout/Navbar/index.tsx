@@ -32,7 +32,7 @@ const Navbar: FC = () => {
 
             <a
               href="/"
-              className="block w-36 h-12 sm:w-36 sm:h-12 md:w-48 md:h-20 lg:w-48 lg:h-20"
+              className="block w-36 h-12 sm:w-36 sm:h-12 md:w-36 md:h-20 lg:w-36 lg:h-20"
             >
               <Image
                 alt="navbar-logo"

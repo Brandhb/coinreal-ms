@@ -75,15 +75,16 @@ const BuyBitcoinPage: React.FC = () => {
     <div className="py-8 lg:py-16 mx-auto max-w-6xl space-y-10">
       <MaxWidthWrapper>
         <header>
-        <div className="py-2 px-4">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl leading-24">
-                Buy Bitcoin (BTC)
-              </h1>
-              <p className="text-lg text-gray-700 sm:text-xl my-10">
-                Welcome to our Buy Bitcoin page where you can effortlessly exchange AUD for Bitcoin (BTC). 
-                Dive into the world of crypto trading today!
-              </p>
-            </div>
+          <div className="py-2 px-4">
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl leading-24">
+              Buy Bitcoin (BTC)
+            </h1>
+            <p className="text-lg text-gray-700 sm:text-xl my-10">
+              Welcome to our Buy Bitcoin page where you can effortlessly
+              exchange AUD for Bitcoin (BTC). Dive into the world of crypto
+              trading today!
+            </p>
+          </div>
         </header>
 
         <main className="mx-auto px-4">
@@ -128,14 +129,47 @@ const BuyBitcoinPage: React.FC = () => {
 
                   {/* Purchase information */}
                   <div className="mt-12">
-                    <h3 className="text-xl font-semibold text-gray-800">
-                      Purchase Bitcoin (BTC)
-                    </h3>
-                    <p className="text-gray-700 mt-2">
-                      To buy Bitcoin, click the button below and follow the
-                      instructions in the modal. Once completed, we will send
-                      BTC to your connected Metamask wallet address.
-                    </p>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-800">
+                        Purchase Bitcoin (BTC)
+                      </h3>
+                      <p className="text-gray-700 mt-2">
+                        Follow these steps to purchase Bitcoin and receive it in
+                        your Metamask wallet:
+                      </p>
+                      <ol className="list-decimal list-inside text-gray-700 mt-2 space-y-2">
+                        <li>
+                          <span className="font-semibold">
+                            Click the button below:
+                          </span>{" "}
+                          This will open a modal where you can sign an agreement
+                          form regarding the credit card details.
+                        </li>
+                        <li>
+                          <span className="font-semibold">
+                            Enter your credit card details:
+                          </span>{" "}
+                          After signing the agreement, you will be directed to a
+                          form to enter your credit card information.
+                        </li>
+                        <li>
+                          <span className="font-semibold">
+                            Complete the purchase:
+                          </span>{" "}
+                          Finalize your purchase by submitting your credit card
+                          details.
+                        </li>
+                        <li>
+                          <span className="font-semibold">
+                            Wait for the transfer:
+                          </span>{" "}
+                          Once your purchase is completed, we will send BTC to
+                          your connected Metamask wallet address. <b> This process
+                          might take up to 72 hours due to network confirmation
+                          times and security processes.</b> 
+                        </li>
+                      </ol>
+                    </div>
 
                     {/* Approval checkbox 
                     <div className="mt-4 flex items-center">
