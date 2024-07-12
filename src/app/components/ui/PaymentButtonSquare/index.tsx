@@ -65,7 +65,8 @@ const PaymentButton: React.FC = () => {
   }, []);
 
   return (
-    <div className="mx-auto flex justify-center items-center w-[60%] min-w-[259px] bg-white border border-black/10 shadow-[2px_10px_5px_rgba(0,0,0,0)] rounded-lg font-sans">
+    <div className="mx-auto flex justify-center items-center w-[60%] min-w-[259px]
+     bg-white border border-black/10 shadow-[2px_10px_5px_rgba(0,0,0,0)] rounded-lg font-sans">
       <div className="overflow-auto flex flex-col justify-end items-center w-259
        bg-white border border-black/10 shadow-[2px_10px_5px_rgba(0,0,0,0)] rounded-lg font-sans">
         <Image
