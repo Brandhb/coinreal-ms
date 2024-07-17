@@ -1,10 +1,10 @@
-[build]
-  command = "npm run build"
-  publish = "out"
-  timeout = 1200 # Increase the timeout to 20 minutes
+#[build]
+#command = "npm run build"
+#publish = "out"
+#timeout = 1200            # Increase the timeout to 20 minutes
 
-[build.environment]
-  DATABASE_URL = "postgresql://postgres.efdtrpwmciaohploynjo:HypbY1h4LlpKw1tf@aws-0-ap-southeast-2.pooler.supabase.com:6543/postgres"
+#[build.environment]
+#DATABASE_URL = "postgresql://postgres.efdtrpwmciaohploynjo:HypbY1h4LlpKw1tf@aws-0-ap-southeast-2.pooler.supabase.com:5432/postgres"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+#[[plugins]]
+#package = "@netlify/plugin-nextjs"
