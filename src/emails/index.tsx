@@ -27,7 +27,7 @@ export const ContactUsEmail: React.FC<EmailProps> = ({ name, senderEmail, messag
           <Section>
             <Text className="font-bold text-center text-lg mb-4">Hello {name}!</Text>
             <Text className="text-center mb-4">
-              Thank you for reaching out to the CoinRealMs support team. We have received your message
+              Thank you for reaching out to the Coin-realms support team. We have received your message
               and will get back to you as soon as possible.
             </Text>
             <Text className="text-center">

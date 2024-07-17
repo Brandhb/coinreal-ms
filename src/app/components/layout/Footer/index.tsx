@@ -4,7 +4,7 @@ import { TwitterIcon } from "lucide-react";
 
 const Footer: React.FC = () => {
   const handleContactUsClick = () => {
-    window.location.href = "mailto:support@coinreal-ms.com";
+    window.location.href = "mailto:support@coin-realms.com";
   };
 
   return (
@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
           <div className="mb-6 mr-8 md:mb-0">
             <a href="/" className="flex items-center">
               <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-              CoinRealMs
+              Coin-realms
               </span>
             </a>
           </div>
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
               out to us using the contact information below.
             </p>
             <div className=" mb-4">
-              <p>Email: support@coinreal-ms.com</p>
+              <p>Email: support@coin-realms.com</p>
             </div>
             <button
               onClick={handleContactUsClick}
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
                 </li>
                 <li>
                   <a
-                    href="https://x.com/coinreal-ms"
+                    href="https://x.com/coin-realms"
                     className="hover:underline hover:text-gray-300"
                   >
                     X Page
@@ -146,7 +146,7 @@ const Footer: React.FC = () => {
           <span className="text-sm text-white sm:text-center">
             © {new Date().getFullYear()}{" "}
             <a href="/" className="hover:underline hover:text-gray-300">
-            CoinRealMs
+            Coin-realms
             </a>
             . All Rights Reserved.
           </span>
@@ -167,7 +167,7 @@ const Footer: React.FC = () => {
               <span className="sr-only">Discord community</span>
             </a>
             <a
-              href="https://x.com/coinreal-ms"
+              href="https://x.com/coin-realms"
               className="text-white hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg

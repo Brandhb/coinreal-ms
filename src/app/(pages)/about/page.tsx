@@ -64,7 +64,7 @@ const Page = () => {
       <MaxWidthWrapper>
         <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl space-y-10">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            About CoinRealMs
+            About Coin-realms
           </h2>
           <p className="mt-4 text-lg text-gray-600">
             Your gateway to seamless cryptocurrency exchange and trading.
@@ -102,7 +102,7 @@ const Page = () => {
               <div className="md:w-1/2 space-y-7 mt-4">
                 <div className="rext0md text-gray-800">
                   <p className="md:text-left">
-                    At CoinRealMs, we&apos;re committed to providing Australians
+                    At Coin-realms, we&apos;re committed to providing Australians
                     with the easiest and most convenient way to buy, sell, and
                     exchange cryptocurrencies. As a locally based company, we
                     understand the unique needs of the Australian market, which
@@ -124,7 +124,7 @@ const Page = () => {
                   <p className="md:text-left">
                     Whether you&apos;re looking to dip your toes into the world
                     of cryptocurrency for the first time or you&apos;re a
-                    seasoned trader looking for a new platform, CoinRealMs has
+                    seasoned trader looking for a new platform, Coin-realms has
                     you covered. Join us today and experience the future of
                     finance with ease.
                   </p>

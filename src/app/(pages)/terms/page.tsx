@@ -20,10 +20,10 @@ import {
 
 const termsOfUseContent = [
   {
-    title: "Welcome to CoinRealMs",
+    title: "Welcome to Coin-realms",
     Icon: Globe,
     content:
-      "CoinRealMs Pty Ltd (we, us, our) owns and operates CoinRealMs.com.au and all of its sub-domains (the Site), the 'CoinRealMs' iOS and Android mobile applications (the App), and various third-party social media and messaging sites, channels, pages, groups, and forums (collectively, our Services).",
+      "Coin-realms Pty Ltd (we, us, our) owns and operates coin-realms.com.au and all of its sub-domains (the Site), the 'Coin-realms' iOS and Android mobile applications (the App), and various third-party social media and messaging sites, channels, pages, groups, and forums (collectively, our Services).",
   },
   {
     title: "Acceptance and Variation of Terms",

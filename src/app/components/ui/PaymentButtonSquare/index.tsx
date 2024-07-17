@@ -71,7 +71,7 @@ const PaymentButton: React.FC = () => {
        bg-white border border-black/10 shadow-[2px_10px_5px_rgba(0,0,0,0)] rounded-lg font-sans">
         <Image
           src="https://items-images-production.s3.us-west-2.amazonaws.com/files/38dd2310e066cde27856a66e8a34c50efe4a15a6/original.png"
-          alt="CoinRealMs"
+          alt="Coin-realms"
           width={259}
           height={140}
           layout="responsive"

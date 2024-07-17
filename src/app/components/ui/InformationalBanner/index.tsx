@@ -45,7 +45,7 @@ export const InformationalBanner = () => {
           </span>
         </h2>
         <p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-          To get started with buying or selling cryptocurrency on CoinRealMs,
+          To get started with buying or selling cryptocurrency on Coin-realms,
           please complete our identification process as required by government
           regulations.
         </p>

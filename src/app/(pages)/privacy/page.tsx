@@ -10,7 +10,7 @@ const perks = [
     Icon: ShieldCheck,
     title: "Introduction",
     description:
-      "CoinRealMs ('CoinRealMs,' 'we,' 'us,' or 'our') is committed to protecting the privacy and security of your personal information. This Privacy Policy outlines our practices regarding the collection, use, disclosure, and protection of your personal information in accordance with the Australian Privacy Act 1988 (Cth) and other applicable privacy laws.",
+      "Coin-realms ('Coin-realms,' 'we,' 'us,' or 'our') is committed to protecting the privacy and security of your personal information. This Privacy Policy outlines our practices regarding the collection, use, disclosure, and protection of your personal information in accordance with the Australian Privacy Act 1988 (Cth) and other applicable privacy laws.",
   },
   {
     Icon: User,
@@ -70,7 +70,7 @@ const perks = [
     Icon: PhoneCall,
     title: "Contact Us",
     description:
-      "If you have any questions about this Privacy Policy or our privacy practices, or if you would like to exercise your rights regarding your personal information, please contact us at support@coinreal-ms.com.",
+      "If you have any questions about this Privacy Policy or our privacy practices, or if you would like to exercise your rights regarding your personal information, please contact us at support@coin-realms.com.",
   },
 ];
 
@@ -124,7 +124,7 @@ const page = () => {
               <div className="md:w-1/2 space-y-7">
                 <div className="text-lg text-gray-800">
                   <p className="md:text-left">
-                    At CoinRealMs, we are committed to protecting the privacy
+                    At Coin-realms, we are committed to protecting the privacy
                     and security of our users personal information. We adhere
                     to strict data protection regulations and implement
                     industry-standard security measures to ensure the

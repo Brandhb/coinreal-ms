@@ -4,7 +4,7 @@ import { auth } from "@clerk/nextjs/server";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'CoinRealMs - Sign In',
+  title: 'Coin-realms - Sign In',
   description: 'Crypto exchange page'
 }
 

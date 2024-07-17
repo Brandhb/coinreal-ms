@@ -15,7 +15,7 @@ import GoogleAnalytics from '@/app/components/GoogleAnalytics';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = constructMetadata({
-  title: "Coinreal-Ms - the best place for crypto trade",
+  title: "Coin-realms - the best place for crypto trade",
 });
 
 export default function RootLayout({
