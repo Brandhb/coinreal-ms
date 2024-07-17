@@ -59,7 +59,7 @@ const AMLPolicyPage = () => {
             Anti-Money Laundering (AML) Policy
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Ways2Coin is committed to preventing money laundering activities on
+            CoinRealMs is committed to preventing money laundering activities on
             its platform and complying with relevant anti-money laundering (AML)
             laws and regulations. Money laundering is the process of concealing
             the origins of illegally obtained money, typically by means of
@@ -95,7 +95,7 @@ const AMLPolicyPage = () => {
               </div>
             ))}
             <p className="mb-4">
-              By using Ways2Coin, you agree to comply with our AML policy and
+              By using CoinRealMs, you agree to comply with our AML policy and
               provide any information or documentation requested to verify your
               identity. We reserve the right to refuse or suspend service to
               anyone who does not comply with our AML policy.
@@ -104,10 +104,10 @@ const AMLPolicyPage = () => {
               If you have any questions about our AML policy or suspect any
               suspicious activity, please contact us at{" "}
               <a
-                href="mailto:support@ways2coin.com"
+                href="mailto:support@coinreal-ms.com"
                 className="text-blue-500 underline"
               >
-                support@ways2coin.com
+                support@coinreal-ms.com
               </a>
               .
             </p>

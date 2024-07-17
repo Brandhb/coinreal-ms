@@ -3,7 +3,7 @@ import { SignUp } from "@clerk/nextjs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Ways2Coin - Sign Up',
+  title: 'CoinRealMs - Sign Up',
   description: 'Crypto exchange sign up page'
 }
 

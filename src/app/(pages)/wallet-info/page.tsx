@@ -111,10 +111,10 @@ const WalletInfoPage = () => {
 
               <section>
                 <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                  Using Your MetaMask Wallet on Ways2Coin
+                  Using Your MetaMask Wallet on CoinRealMs
                 </h2>
                 <p className="text-gray-700">
-                  To buy, sell, or exchange cryptocurrency on the Ways2Coin
+                  To buy, sell, or exchange cryptocurrency on the CoinRealMs
                   platform, you need to provide your MetaMask wallet address.
                   Follow these steps:
                 </p>
@@ -124,7 +124,7 @@ const WalletInfoPage = () => {
                   </li>
                   <li>
                     Navigate to the buy, sell, or exchange feature on the
-                    Ways2Coin platform.
+                    CoinRealMs platform.
                   </li>
                   <li>
                     Enter your MetaMask wallet address in the designated field.
@@ -145,7 +145,7 @@ const WalletInfoPage = () => {
                   common digital wallets available in the market, such as Trust
                   Wallet, Coinbase Wallet, or MyEtherWallet. Simply provide the
                   address of your chosen wallet when using the buy, sell, or
-                  exchange features on the Ways2Coin platform.
+                  exchange features on the CoinRealMs platform.
                 </p>
               </section>
 
@@ -155,7 +155,7 @@ const WalletInfoPage = () => {
                 </h2>
                 <p className="text-gray-700">
                   Always double-check your wallet address before submitting any
-                  transactions. Ways2Coin is not responsible for any lost funds
+                  transactions. CoinRealMs is not responsible for any lost funds
                   due to incorrect wallet addresses.
                 </p>
               </section>

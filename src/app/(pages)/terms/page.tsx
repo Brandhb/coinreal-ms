@@ -20,10 +20,10 @@ import {
 
 const termsOfUseContent = [
   {
-    title: "Welcome to Ways2Coin",
+    title: "Welcome to CoinRealMs",
     Icon: Globe,
     content:
-      "Ways2Coin Pty Ltd (we, us, our) owns and operates ways2coin.com.au and all of its sub-domains (the Site), the 'Ways2Coin' iOS and Android mobile applications (the App), and various third-party social media and messaging sites, channels, pages, groups, and forums (collectively, our Services).",
+      "CoinRealMs Pty Ltd (we, us, our) owns and operates CoinRealMs.com.au and all of its sub-domains (the Site), the 'CoinRealMs' iOS and Android mobile applications (the App), and various third-party social media and messaging sites, channels, pages, groups, and forums (collectively, our Services).",
   },
   {
     title: "Acceptance and Variation of Terms",

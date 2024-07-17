@@ -23,7 +23,7 @@ const Testimonials: React.FC = () => {
       rating: 5,
       title: "Seamless Crypto Transactions",
       content:
-        "Ways2coin has made my crypto journey incredibly smooth. Buying crypto with my credit card is a breeze, and the exchange feature is lightning fast. I'm impressed by the user-friendly interface and hassle-free transactions.",
+        "CoinRealMs has made my crypto journey incredibly smooth. Buying crypto with my credit card is a breeze, and the exchange feature is lightning fast. I'm impressed by the user-friendly interface and hassle-free transactions.",
       author: "Alice Smith",
     },
     {
@@ -31,7 +31,7 @@ const Testimonials: React.FC = () => {
       rating: 4,
       title: "Efficient and Reliable Platform",
       content:
-        "As someone new to the world of cryptocurrencies, I found Ways2coin to be a lifesaver. The process of purchasing crypto with a credit card is straightforward, and the exchange platform operates efficiently. I feel confident in using Ways2coin for all my crypto needs.",
+        "As someone new to the world of cryptocurrencies, I found CoinRealMs to be a lifesaver. The process of purchasing crypto with a credit card is straightforward, and the exchange platform operates efficiently. I feel confident in using CoinRealMs for all my crypto needs.",
       author: "Bob Johnson",
     },
     {
@@ -39,7 +39,7 @@ const Testimonials: React.FC = () => {
       rating: 5,
       title: "User-Friendly Interface",
       content:
-        "Ways2coin has an intuitive interface that makes buying and exchanging cryptocurrencies a breeze. I appreciate the simplicity and efficiency of the platform. It's my go-to choice for all crypto transactions.",
+        "CoinRealMs has an intuitive interface that makes buying and exchanging cryptocurrencies a breeze. I appreciate the simplicity and efficiency of the platform. It's my go-to choice for all crypto transactions.",
       author: "Emily Davis",
     },
     {
@@ -47,7 +47,7 @@ const Testimonials: React.FC = () => {
       rating: 5,
       title: "Quick and Secure Transactions",
       content:
-        "I've had a great experience using Ways2coin. The platform ensures quick and secure transactions, whether I'm buying crypto with my credit card or exchanging different cryptocurrencies. Highly recommended!",
+        "I've had a great experience using CoinRealMs. The platform ensures quick and secure transactions, whether I'm buying crypto with my credit card or exchanging different cryptocurrencies. Highly recommended!",
       author: "Michael Brown",
     },
     {
@@ -55,7 +55,7 @@ const Testimonials: React.FC = () => {
       rating: 5,
       title: "Convenient Crypto Purchases",
       content:
-        "Ways2coin offers a convenient way to purchase cryptocurrencies with a credit card. The process is simple and hassle-free, and the exchange rates are competitive. I'm impressed by the speed and reliability of the platform.",
+        "CoinRealMs offers a convenient way to purchase cryptocurrencies with a credit card. The process is simple and hassle-free, and the exchange rates are competitive. I'm impressed by the speed and reliability of the platform.",
       author: "Sophia Wilson",
     },
     {
@@ -63,7 +63,7 @@ const Testimonials: React.FC = () => {
       rating: 4,
       title: "Reliable Exchange Platform",
       content:
-        "I rely on Ways2coin for all my crypto transactions, and it has never let me down. The platform is easy to use, and the exchange feature works seamlessly. I appreciate the responsive customer support team as well.",
+        "I rely on CoinRealMs for all my crypto transactions, and it has never let me down. The platform is easy to use, and the exchange feature works seamlessly. I appreciate the responsive customer support team as well.",
       author: "David Clark",
     },
     {
@@ -71,7 +71,7 @@ const Testimonials: React.FC = () => {
       rating: 5,
       title: "Smooth Crypto Experience",
       content:
-        "Ways2coin provides a smooth and hassle-free experience for buying and exchanging cryptocurrencies. I appreciate the simplicity of the platform and the quick processing times. It's my preferred choice for crypto transactions.",
+        "CoinRealMs provides a smooth and hassle-free experience for buying and exchanging cryptocurrencies. I appreciate the simplicity of the platform and the quick processing times. It's my preferred choice for crypto transactions.",
       author: "Jennifer White",
     },
     {
@@ -79,7 +79,7 @@ const Testimonials: React.FC = () => {
       rating: 4,
       title: "Excellent Service",
       content:
-        "I'm impressed by the excellent service offered by Ways2coin. The platform is user-friendly, and the customer support team is responsive and helpful. Buying crypto with a credit card has never been easier!",
+        "I'm impressed by the excellent service offered by CoinRealMs. The platform is user-friendly, and the customer support team is responsive and helpful. Buying crypto with a credit card has never been easier!",
       author: "Daniel Lee",
     },
     {
@@ -87,7 +87,7 @@ const Testimonials: React.FC = () => {
       rating: 5,
       title: "Great Platform for Crypto Enthusiasts",
       content:
-        "Ways2coin is a great platform for crypto enthusiasts like me. The process of buying and exchanging cryptocurrencies is seamless, and the platform offers competitive rates. I highly recommend Ways2coin to anyone interested in crypto.",
+        "CoinRealMs is a great platform for crypto enthusiasts like me. The process of buying and exchanging cryptocurrencies is seamless, and the platform offers competitive rates. I highly recommend CoinRealMs to anyone interested in crypto.",
       author: "Emma Harris",
     },
     {
@@ -95,7 +95,7 @@ const Testimonials: React.FC = () => {
       rating: 5,
       title: "Easy-to-Use Exchange Platform",
       content:
-        "Ways2coin has simplified the process of buying and exchanging cryptocurrencies. The platform's user-friendly interface makes it easy to navigate, and the exchange feature operates smoothly. It's a reliable choice for crypto transactions.",
+        "CoinRealMs has simplified the process of buying and exchanging cryptocurrencies. The platform's user-friendly interface makes it easy to navigate, and the exchange feature operates smoothly. It's a reliable choice for crypto transactions.",
       author: "Matthew Taylor",
     },
   ];
@@ -119,7 +119,7 @@ const Testimonials: React.FC = () => {
             What Our Customers Say
           </h1>
           <h3 className="text-lg mb-8 text-gray-500">
-            Discover why users trust Ways2Coin for their cryptocurrency needs
+            Discover why users trust CoinRealMs for their cryptocurrency needs
           </h3>
         </div>
       <div className="overflow-hidden" ref={emblaRef}>

@@ -7,7 +7,7 @@ export const HowItWorks = () => {
             How It Works
           </h1>
           <h3 className="text-lg mb-8 text-gray-500">
-            Learn about the simple steps to start using Ways2Coin
+            Learn about the simple steps to start using CoinRealMs
           </h3>
         </div>
 

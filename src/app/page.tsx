@@ -102,7 +102,7 @@ export default function Home() {
                 The most trusted cryptocurrency platform
               </h1>
               <h3 className="text-lg mb-8 text-gray-500">
-                Here are a few reasons why you should choose Ways2Coin
+                Here are a few reasons why you should choose CoinRealMs
               </h3>
             </div>
 
@@ -145,7 +145,7 @@ export default function Home() {
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-semibold mb-8">Start Trading Today</h2>
             <p className="text-lg mb-8">
-              Join thousands of traders already using Ways2Coin platform. Sign
+              Join thousands of traders already using CoinRealMs platform. Sign
               up now!
             </p>
             <a

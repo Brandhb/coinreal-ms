@@ -9,7 +9,7 @@ import {
 import { ContactFormSchema, EmailFormScheme, VerrifFormSchema } from "@/validators";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const supportEmailAddress = "support@ways2coin.com";
+const supportEmailAddress = "support@coinrealms.com";
 
 type ContactFormInputs = z.infer<typeof ContactFormSchema>;
 type VerificationFormInputs = z.infer<typeof VerrifFormSchema>;
@@ -81,9 +81,9 @@ const getEmailSubject = (emailType: EmailType): string => {
   switch (emailType) {
     case "contactUs":
     case "contactUsSupport":
-      return "Ways2Coin - Contact form submission";
+      return "CoinRealMs - Contact form submission";
     case "verification":
-      return "Ways2Coin - Verification Required";
+      return "CoinRealMs - Verification Required";
     default:
       throw new Error("Invalid email type");
   }
