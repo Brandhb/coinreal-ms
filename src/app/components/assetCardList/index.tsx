@@ -22,7 +22,7 @@ const AssetList: React.FC<AssetListProps> = ({ cryptocurrencies }) => {
             currentPrice={crypto.current_price}
           />
         ))}
-        <div className="flex-shrink-0 max-w-sm min-w-[150px] p-6 border border-gray-200 rounded-lg shadow flex flex-col justify-between bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white">
+        <div className="flex-shrink-0 max-w-sm min-w-[150px] p-6 border border-gray-200 rounded-lg shadow flex flex-col justify-between bg-gradient-to-r from-green-500 to-teal-500 text-white">
           <a
             href="/currency-list"
             className="mb-2 text-xl font-semibold tracking-tight hover:underline"

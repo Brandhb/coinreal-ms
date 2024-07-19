@@ -26,7 +26,7 @@ const Navbar: FC = () => {
           <div className="flex-shrink-0">
             {/*
             <a href="/" className="text-xl font-bold text-gray-700">
-              Coin-realms
+              CoinRealMs
             </a>
             />*/}
 

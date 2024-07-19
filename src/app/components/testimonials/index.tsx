@@ -1,175 +1,62 @@
-"use client";
-import useEmblaCarousel from "embla-carousel-react";
-import { EmblaOptionsType } from "embla-carousel";
-import { DotButton, useDotButton } from "./EmblaCaouselDotButton";
-import {
-  PrevButton,
-  NextButton,
-  usePrevNextButtons,
-} from "./EmblaCarouselArrowButtons";
+import { FC } from "react";
+import { Star } from "lucide-react";
 
 interface Testimonial {
-  id: number;
+  name: string;
+  quote: string;
   rating: number;
-  title: string;
-  content: string;
-  author: string;
 }
 
-const Testimonials: React.FC = () => {
-  const slides: Testimonial[] = [
-    {
-      id: 1,
-      rating: 5,
-      title: "Seamless Crypto Transactions",
-      content:
-        "Coin-realms has made my crypto journey incredibly smooth. Buying crypto with my credit card is a breeze, and the exchange feature is lightning fast. I'm impressed by the user-friendly interface and hassle-free transactions.",
-      author: "Alice Smith",
-    },
-    {
-      id: 2,
-      rating: 4,
-      title: "Efficient and Reliable Platform",
-      content:
-        "As someone new to the world of cryptocurrencies, I found Coin-realms to be a lifesaver. The process of purchasing crypto with a credit card is straightforward, and the exchange platform operates efficiently. I feel confident in using Coin-realms for all my crypto needs.",
-      author: "Bob Johnson",
-    },
-    {
-      id: 3,
-      rating: 5,
-      title: "User-Friendly Interface",
-      content:
-        "Coin-realms has an intuitive interface that makes buying and exchanging cryptocurrencies a breeze. I appreciate the simplicity and efficiency of the platform. It's my go-to choice for all crypto transactions.",
-      author: "Emily Davis",
-    },
-    {
-      id: 4,
-      rating: 5,
-      title: "Quick and Secure Transactions",
-      content:
-        "I've had a great experience using Coin-realms. The platform ensures quick and secure transactions, whether I'm buying crypto with my credit card or exchanging different cryptocurrencies. Highly recommended!",
-      author: "Michael Brown",
-    },
-    {
-      id: 5,
-      rating: 5,
-      title: "Convenient Crypto Purchases",
-      content:
-        "Coin-realms offers a convenient way to purchase cryptocurrencies with a credit card. The process is simple and hassle-free, and the exchange rates are competitive. I'm impressed by the speed and reliability of the platform.",
-      author: "Sophia Wilson",
-    },
-    {
-      id: 6,
-      rating: 4,
-      title: "Reliable Exchange Platform",
-      content:
-        "I rely on Coin-realms for all my crypto transactions, and it has never let me down. The platform is easy to use, and the exchange feature works seamlessly. I appreciate the responsive customer support team as well.",
-      author: "David Clark",
-    },
-    {
-      id: 7,
-      rating: 5,
-      title: "Smooth Crypto Experience",
-      content:
-        "Coin-realms provides a smooth and hassle-free experience for buying and exchanging cryptocurrencies. I appreciate the simplicity of the platform and the quick processing times. It's my preferred choice for crypto transactions.",
-      author: "Jennifer White",
-    },
-    {
-      id: 8,
-      rating: 4,
-      title: "Excellent Service",
-      content:
-        "I'm impressed by the excellent service offered by Coin-realms. The platform is user-friendly, and the customer support team is responsive and helpful. Buying crypto with a credit card has never been easier!",
-      author: "Daniel Lee",
-    },
-    {
-      id: 9,
-      rating: 5,
-      title: "Great Platform for Crypto Enthusiasts",
-      content:
-        "Coin-realms is a great platform for crypto enthusiasts like me. The process of buying and exchanging cryptocurrencies is seamless, and the platform offers competitive rates. I highly recommend Coin-realms to anyone interested in crypto.",
-      author: "Emma Harris",
-    },
-    {
-      id: 10,
-      rating: 5,
-      title: "Easy-to-Use Exchange Platform",
-      content:
-        "Coin-realms has simplified the process of buying and exchanging cryptocurrencies. The platform's user-friendly interface makes it easy to navigate, and the exchange feature operates smoothly. It's a reliable choice for crypto transactions.",
-      author: "Matthew Taylor",
-    },
-  ];
+const testimonials: Testimonial[] = [
+  {
+    name: "Alice Johnson",
+    quote: "Coin-realms made trading cryptocurrencies so easy and secure. The platform is user-friendly and the support team is always there to help.",
+    rating: 5,
+  },
+  {
+    name: "Bob Smith",
+    quote: "I love the seamless transactions and the variety of cryptocurrencies available on Coin-realms. Highly recommend!",
+    rating: 4,
+  },
+  {
+    name: "Carol Davis",
+    quote: "Joining Coin-realms was one of the best decisions I've made. The platform is intuitive and the trading experience is top-notch.",
+    rating: 5,
+  },
+];
 
-  const options: EmblaOptionsType = { loop: true };
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
-
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
-    useDotButton(emblaApi);
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
-
+const Testimonials: FC = () => {
   return (
-    <section className="relative">
-      <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl space-y-4">
-          <h1 className="text-3xl px-4 font-bold tracking-tight text-gray-900 sm:text-3xl leading-24">
-            What Our Customers Say
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="py-16 mx-auto text-center flex flex-col items-center max-w-3xl space-y-4">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl leading-10">
+            What Our Users Say
           </h1>
-          <h3 className="text-lg mb-8 text-gray-500">
-            Discover why users trust Coin-realms for their cryptocurrency needs
-          </h3>
+          <p className="text-lg text-gray-500">
+            Hear from our satisfied customers who are thriving on Coin-realms
+          </p>
         </div>
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-          {slides.map((testimonial) => (
-            <div className="flex-[0_0_100%] p-4" key={testimonial.id}>
-              <blockquote className="flex h-full flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
-                <div>
-                  <div className="flex gap-0.5 text-cyan-500">
-                    {Array.from({ length: testimonial.rating }, (_, i) => (
-                      <svg
-                        key={i}
-                        className="h-5 w-5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <div className="mt-4">
-                    <h3 className="text-2xl font-bold text-gray-700 sm:text-3xl">
-                      {testimonial.title}
-                    </h3>
-                    <p className="mt-4 text-gray-600">{testimonial.content}</p>
-                  </div>
-                </div>
-                <footer className="mt-8 text-sm text-gray-500">
-                  &mdash; {testimonial.author}
-                </footer>
-              </blockquote>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center text-center bg-white p-8 rounded-lg shadow-lg transition-transform hover:scale-105"
+            >
+              <h3 className="text-2xl font-semibold mb-4">{testimonial.name}</h3>
+              <p className="text-gray-600 mb-4">{testimonial.quote}</p>
+              <div className="flex justify-center">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="text-yellow-500" />
+                ))}
+                {[...Array(5 - testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="text-gray-300" />
+                ))}
+              </div>
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="flex justify-between mt-8">
-        <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-        <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-      </div>
-
-      <div className="flex justify-center mt-4 space-x-2">
-        {scrollSnaps.map((_: any, index: number) => (
-          <DotButton
-            key={index}
-            selected={index === selectedIndex}
-            onClick={() => onDotButtonClick(index)}
-          />
-        ))}
       </div>
     </section>
   );

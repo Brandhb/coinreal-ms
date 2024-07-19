@@ -32,7 +32,7 @@ export default function RootLayout({
         className={cn("relative h-full font-sans antialiased", inter.className)}
       >
         <Toaster />
-        <main className="relative flex flex-col min-h-screen bg-gradient-to-r from-fuchsia-500 to-cyan-500">
+        <main className="relative flex flex-col min-h-screen bg-gradient-to-r from-green-500 to-teal-500">
           <Providers>
             <Navbar />
             <GoogleAnalytics />

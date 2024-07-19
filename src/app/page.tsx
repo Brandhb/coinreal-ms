@@ -4,7 +4,14 @@ import { getAssetsFromCG, getCurrenciesFromDS } from "@/app/actions/currencies";
 import { columns } from "@/app/(pages)/currency-list/columns";
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import { Button, buttonVariants } from "@/app/components/ui/Button";
-import { Leaf, ArrowLeftRight, DollarSign } from "lucide-react";
+import {
+  Leaf,
+  ArrowLeftRight,
+  DollarSign,
+  Shield,
+  Globe,
+  Lightbulb,
+} from "lucide-react";
 import Link from "next/link";
 import Perk from "./components/ui/Perk";
 import { HowItWorks } from "./components/mainPage/HowItWorks";
@@ -12,25 +19,26 @@ import Testimonials from "./components/testimonials";
 import { MobileFriendlyTable } from "./components/ui/currencyList/mobile-data-table";
 import { DataTable } from "./components/ui/currencyList/data-table";
 import AssetList from "./components/assetCardList";
+import { cn } from "@/lib/utils";
 
 const perks = [
   {
-    name: "Secure & Easy Transactions",
-    Icon: ArrowLeftRight,
+    name: "Robust Security",
+    Icon: Shield,
     description:
-      "Our platform offers secure and easy transactions for buying, selling, and trading cryptocurrencies.",
+      "Our platform provides top-notch security features to protect your digital assets.",
   },
   {
-    name: "Fiat Currency Support",
-    Icon: DollarSign,
+    name: "Global Access",
+    Icon: Globe,
     description:
-      "Trade crypto with ease using fiat currencies. We support multiple fiat currencies for your convenience.",
+      "Trade cryptocurrencies from anywhere in the world, at any time.",
   },
   {
-    name: "For the Planet",
-    Icon: Leaf,
+    name: "Lightning-Fast Transactions",
+    Icon: Lightbulb,
     description:
-      "We've pledged 1% of sales to the preservation and restoration of the natural environment.",
+      "Experience rapid transaction speeds for buying, selling, and trading crypto.",
   },
 ];
 
@@ -40,30 +48,33 @@ export default function Home() {
     isLoading,
     error,
   } = useSWR("currencies", getAssetsFromCG, {
-    refreshInterval: 5000, // Polling interval in milliseconds (e.g., every 5 seconds)
+    refreshInterval: 4000, // Polling interval in milliseconds (e.g., every 4 seconds)
   });
 
   return (
     <>
       <MaxWidthWrapper>
-        {/* HeroSection */}
-        <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl space-y-10">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl px-4 leading-24">
-            Safely Buy, Sell, and{" "}
-            <span className="text-blue-600">Trade Cryptocurrencies</span>.
+        {/* Hero Section */}
+        <section className="py-20 text-center flex flex-col items-center max-w-3xl mx-auto space-y-10">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl px-4 leading-24">
+            Seamlessly Buy, Sell, and{" "}
+            <span className="text-teal-800">Exchange Digital Assets</span>.
           </h1>
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <Link href="/currency-list" className={buttonVariants()}>
-              Browse Currencies
+            <Link href="/marketplace" className={buttonVariants()}>
+              Explore Marketplace
             </Link>
-            <Button variant="ghost">
+            <Button
+              variant="ghost"
+              className="inline-flex items-center justify-center"
+            >
               <a
                 href="sign-up"
                 className="inline-flex items-center justify-center"
               >
-                Get Started
+                Join Now
                 <svg
-                  className="w-3 h-3 ms-2 rtl:rotate-180"
+                  className="w-3 h-3 ml-2 rtl:rotate-180"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -80,10 +91,11 @@ export default function Home() {
               </a>
             </Button>
           </div>
-        </div>
+        </section>
       </MaxWidthWrapper>
+
       <div className="relative bg-transparent">
-        <svg
+      {/*  <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
           style={{ marginBottom: "-1px" }}
@@ -93,23 +105,30 @@ export default function Home() {
             fillOpacity="1"
             d="M0,32L80,37.3C160,43,320,53,480,64C640,75,800,85,960,122.7C1120,160,1280,224,1360,256L1440,288L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
           ></path>
-        </svg>
-        <section className="bg-gray-50 border-gray-50 border-2">
-          <MaxWidthWrapper className="lg:pt-0 lg:mt-[-150px] pb-24 md:py-10 sm:py-10 px-10 space-y-16 lg:space-y-32">
-            {/* perks section */}
-            <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl space-y-4">
-              <h1 className="text-3xl px-4 font-bold tracking-tight text-gray-900 sm:text-3xl leading-24">
-                The most trusted cryptocurrency platform
-              </h1>
-              <h3 className="text-lg mb-8 text-gray-500">
-                Here are a few reasons why you should choose Coin-realms
-              </h3>
+        </svg>*/}
+
+        
+
+        <section className="bg-white border-gray-200 border-2 py-20">
+          
+          <MaxWidthWrapper className="pb-24 md:py-10 sm:py-10 px-10 space-y-16 lg:space-y-32">
+            {/* Smooth transition from Call to Action to How It Works */}
+            
+
+            {/* How It Works Section */}
+            <HowItWorks />
+
+            {/* Perks Section */}
+            <div className="text-center mx-auto max-w-3xl space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+                Why Choose Us?
+              </h2>
+              <p className="text-lg text-gray-500 mb-8">
+                Discover the benefits of using our platform.
+              </p>
             </div>
 
-            <div
-              className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0"
-              style={{ marginTop: "30px" }}
-            >
+            <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
               {perks.map((perk) => (
                 <Perk
                   key={perk.name}
@@ -119,43 +138,26 @@ export default function Home() {
                 />
               ))}
             </div>
-            {/* How It Works Section */}
-              <AssetList cryptocurrencies={currencies || []} />
 
-            {/* How It Works Section */}
-            <HowItWorks />
+            {/* Asset List Section */}
+            <AssetList cryptocurrencies={currencies || []} />
 
-            {/* Testimonials Section*/}
+            {/* Testimonials Section */}
             <Testimonials />
           </MaxWidthWrapper>
         </section>
+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
-          style={{ marginTop: "-1px" }}
+          style={{ marginTop: "-2px" }}
         >
           <path
-            fill="rgb(249 250 251)"
+            fill="#fff"
             fillOpacity="1"
             d="M0,64L80,106.7C160,149,320,235,480,256C640,277,800,235,960,229.3C1120,224,1280,256,1360,272L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
           ></path>
         </svg>
-        {/* Call to Action Section */}
-        <section className="text-white p-20">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-semibold mb-8">Start Trading Today</h2>
-            <p className="text-lg mb-8">
-              Join thousands of traders already using Coin-realms platform. Sign
-              up now!
-            </p>
-            <a
-              href="/signup"
-              className="bg-white text-blue-500 font-semibold px-6 py-3 rounded-full inline-block hover:bg-blue-400 hover:text-white"
-            >
-              Sign Up
-            </a>
-          </div>
-        </section>
       </div>
     </>
   );
